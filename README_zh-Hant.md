@@ -53,6 +53,8 @@ LibDriver BMP390是LibDriver推出的BMP390全功能驅動，該驅動提供壓�
 #### example basic
 
 ```C
+#include "driver_bmp390_basic.h"
+
 uint8_t res;
 uint8_t i;
 float temperature_c;
@@ -93,6 +95,8 @@ return 0;
 #### example shot
 
 ```C
+#include "driver_bmp390_shot.h"
+
 uint8_t res;
 uint8_t i;
 float temperature_c;
@@ -133,6 +137,8 @@ return 0;
 #### example interrupt
 
 ```C
+#include "driver_bmp390_interrupt.h"
+
 uint8_t res;
 uint16_t i, timeout;
 uint8_t gs_data_ready_flag;
@@ -226,6 +232,8 @@ return 0;
 #### example fifo
 
 ```C
+#include "driver_bmp390_fifo.h"
+
 uint8_t gs_fifo_full_flag;
 uint8_t gs_fifo_watermark_flag;
 uint16_t i, timeout;
