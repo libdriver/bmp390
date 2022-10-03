@@ -53,6 +53,8 @@ LibDriver BMP390は、LibDriverによって起動されたBMP390の全機能ド�
 #### example basic
 
 ```C
+#include "driver_bmp390_basic.h"
+
 uint8_t res;
 uint8_t i;
 float temperature_c;
@@ -93,6 +95,8 @@ return 0;
 #### example shot
 
 ```c
+#include "driver_bmp390_shot.h"
+
 uint8_t res;
 uint8_t i;
 float temperature_c;
@@ -133,6 +137,8 @@ return 0;
 #### example interrupt
 
 ```c
+#include "driver_bmp390_interrupt.h"
+
 uint8_t res;
 uint16_t i, timeout;
 uint8_t gs_data_ready_flag;
@@ -226,6 +232,8 @@ return 0;
 #### example fifo
 
 ```c
+#include "driver_bmp390_fifo.h"
+
 uint8_t gs_fifo_full_flag;
 uint8_t gs_fifo_watermark_flag;
 uint16_t i, timeout;
