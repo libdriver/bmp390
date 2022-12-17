@@ -104,7 +104,7 @@ uint8_t bmp390_register_test(bmp390_interface_t interface, bmp390_address_t addr
         bmp390_interface_debug_print("bmp390: chip is %s.\n", info.chip_name);
         bmp390_interface_debug_print("bmp390: manufacturer is %s.\n", info.manufacturer_name);
         bmp390_interface_debug_print("bmp390: interface is %s.\n", info.interface);
-        bmp390_interface_debug_print("bmp390: driver version is %d.%d.\n", info.driver_version/1000, (info.driver_version%1000)/100);
+        bmp390_interface_debug_print("bmp390: driver version is %d.%d.\n", info.driver_version / 1000, (info.driver_version % 1000) / 100);
         bmp390_interface_debug_print("bmp390: min supply voltage is %0.1fV.\n", info.supply_voltage_min_v);
         bmp390_interface_debug_print("bmp390: max supply voltage is %0.1fV.\n", info.supply_voltage_max_v);
         bmp390_interface_debug_print("bmp390: max current is %0.2fmA.\n", info.max_current_ma);

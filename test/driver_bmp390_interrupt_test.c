@@ -36,10 +36,10 @@
 
 #include "driver_bmp390_interrupt_test.h"
 
-static bmp390_handle_t gs_handle;        /**< bmp390 handle */
-static uint8_t gs_data_ready_flag;       /**< data ready flag */
-static float gs_temperature_c;           /**< temperature */
-static float gs_pressure_pa;             /**< pressure */
+static bmp390_handle_t gs_handle;                 /**< bmp390 handle */
+static volatile uint8_t gs_data_ready_flag;       /**< data ready flag */
+static float gs_temperature_c;                    /**< temperature */
+static float gs_pressure_pa;                      /**< pressure */
 
 /**
  * @brief  interrupt test irq handler
@@ -146,7 +146,7 @@ uint8_t bmp390_interrupt_test(bmp390_interface_t interface, bmp390_address_t add
         bmp390_interface_debug_print("bmp390: chip is %s.\n", info.chip_name);
         bmp390_interface_debug_print("bmp390: manufacturer is %s.\n", info.manufacturer_name);
         bmp390_interface_debug_print("bmp390: interface is %s.\n", info.interface);
-        bmp390_interface_debug_print("bmp390: driver version is %d.%d.\n", info.driver_version/1000, (info.driver_version%1000)/100);
+        bmp390_interface_debug_print("bmp390: driver version is %d.%d.\n", info.driver_version / 1000, (info.driver_version % 1000) / 100);
         bmp390_interface_debug_print("bmp390: min supply voltage is %0.1fV.\n", info.supply_voltage_min_v);
         bmp390_interface_debug_print("bmp390: max supply voltage is %0.1fV.\n", info.supply_voltage_max_v);
         bmp390_interface_debug_print("bmp390: max current is %0.2fmA.\n", info.max_current_ma);
@@ -427,8 +427,8 @@ uint8_t bmp390_interrupt_test(bmp390_interface_t interface, bmp390_address_t add
     {
         gs_data_ready_flag = 0;
         bmp390_interface_delay_ms(500);  
-        bmp390_interface_debug_print("bmp390: temperature is %0.2fc.\n", gs_temperature_c);
-        bmp390_interface_debug_print("bmp390: pressure is %0.2fpa.\n", gs_pressure_pa);
+        bmp390_interface_debug_print("bmp390: temperature is %0.2fC.\n", gs_temperature_c);
+        bmp390_interface_debug_print("bmp390: pressure is %0.2fPa.\n", gs_pressure_pa);
     
         /* check data ready flag */
         if (gs_data_ready_flag == 0)
