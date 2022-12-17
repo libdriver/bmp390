@@ -255,10 +255,10 @@ typedef struct bmp390_handle_s
 {
     uint8_t iic_addr;                                                                   /**< iic device address */
     uint8_t buf[512 + 1];                                                               /**< inner buffer */
-    uint8_t (*iic_init)(void);                                                          /**< point to a iic_init function address */
-    uint8_t (*iic_deinit)(void);                                                        /**< point to a iic_deinit function address */
-    uint8_t (*iic_read)(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len);         /**< point to a iic_read function address */
-    uint8_t (*iic_write)(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len);        /**< point to a iic_write function address */
+    uint8_t (*iic_init)(void);                                                          /**< point to an iic_init function address */
+    uint8_t (*iic_deinit)(void);                                                        /**< point to an iic_deinit function address */
+    uint8_t (*iic_read)(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len);         /**< point to an iic_read function address */
+    uint8_t (*iic_write)(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len);        /**< point to an iic_write function address */
     uint8_t (*spi_init)(void);                                                          /**< point to a spi_init function address */
     uint8_t (*spi_deinit)(void);                                                        /**< point to a spi_deinit function address */
     uint8_t (*spi_read)(uint8_t reg, uint8_t *buf, uint16_t len);                       /**< point to a spi_read function address */
@@ -319,7 +319,7 @@ typedef struct bmp390_info_s
 /**
  * @brief     link iic_init function
  * @param[in] HANDLE points to a bmp390 handle structure
- * @param[in] FUC points to a iic_init function address
+ * @param[in] FUC points to an iic_init function address
  * @note      none
  */
 #define DRIVER_BMP390_LINK_IIC_INIT(HANDLE, FUC)         (HANDLE)->iic_init = FUC
@@ -327,7 +327,7 @@ typedef struct bmp390_info_s
 /**
  * @brief     link iic_deinit function
  * @param[in] HANDLE points to a bmp390 handle structure
- * @param[in] FUC points to a iic_deinit function address
+ * @param[in] FUC points to an iic_deinit function address
  * @note      none
  */
 #define DRIVER_BMP390_LINK_IIC_DEINIT(HANDLE, FUC)       (HANDLE)->iic_deinit = FUC
@@ -335,7 +335,7 @@ typedef struct bmp390_info_s
 /**
  * @brief     link iic_read function
  * @param[in] HANDLE points to a bmp390 handle structure
- * @param[in] FUC points to a iic_read function address
+ * @param[in] FUC points to an iic_read function address
  * @note      none
  */
 #define DRIVER_BMP390_LINK_IIC_READ(HANDLE, FUC)         (HANDLE)->iic_read = FUC
@@ -343,7 +343,7 @@ typedef struct bmp390_info_s
 /**
  * @brief     link iic_write function
  * @param[in] HANDLE points to a bmp390 handle structure
- * @param[in] FUC points to a iic_write function address
+ * @param[in] FUC points to an iic_write function address
  * @note      none
  */
 #define DRIVER_BMP390_LINK_IIC_WRITE(HANDLE, FUC)        (HANDLE)->iic_write = FUC
@@ -439,7 +439,7 @@ uint8_t bmp390_set_addr_pin(bmp390_handle_t *handle, bmp390_address_t addr_pin);
 /**
  * @brief      get the iic address pin
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *addr_pin points to a iic address pin buffer
+ * @param[out] *addr_pin points to an iic address pin buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -570,7 +570,7 @@ uint8_t bmp390_get_revision_id(bmp390_handle_t *handle, uint8_t *id);
 /**
  * @brief      get the error
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *err points to a error buffer
+ * @param[out] *err points to an error buffer
  * @return     status code
  *             - 0 success
  *             - 1 get error failed
@@ -609,7 +609,7 @@ uint8_t bmp390_get_sensortime(bmp390_handle_t *handle, uint32_t *t);
 /**
  * @brief      get the event
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *event points to a event buffer
+ * @param[out] *event points to an event buffer
  * @return     status code
  *             - 0 success
  *             - 1 get event failed
@@ -687,7 +687,7 @@ uint8_t bmp390_set_iic_watchdog_period(bmp390_handle_t *handle, bmp390_iic_watch
 /**
  * @brief      get the iic watchdog period
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *period points to a iic watchdog period buffer
+ * @param[out] *period points to an iic watchdog period buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic watchdog period failed
@@ -791,7 +791,7 @@ uint8_t bmp390_set_pressure_oversampling(bmp390_handle_t *handle, bmp390_oversam
 /**
  * @brief      get the pressure oversampling
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *oversampling points to a oversampling buffer
+ * @param[out] *oversampling points to an oversampling buffer
  * @return     status code
  *             - 0 success
  *             - 1 get pressure oversampling failed
@@ -817,7 +817,7 @@ uint8_t bmp390_set_temperature_oversampling(bmp390_handle_t *handle, bmp390_over
 /**
  * @brief      get the temperature oversampling
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *oversampling points to a oversampling buffer
+ * @param[out] *oversampling points to an oversampling buffer
  * @return     status code
  *             - 0 success
  *             - 1 get temperature oversampling failed
@@ -843,7 +843,7 @@ uint8_t bmp390_set_odr(bmp390_handle_t *handle, bmp390_odr_t odr);
 /**
  * @brief      get the output data rate
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *odr points to a output data rate buffer
+ * @param[out] *odr points to an output data rate buffer
  * @return     status code
  *             - 0 success
  *             - 1 get odr failed
@@ -931,7 +931,7 @@ uint8_t bmp390_set_interrupt_pin_type(bmp390_handle_t *handle, bmp390_interrupt_
 /**
  * @brief      get the interrupt pin type
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *pin_type points to a interrupt pin type buffer
+ * @param[out] *pin_type points to an interrupt pin type buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt pin type failed
@@ -957,7 +957,7 @@ uint8_t bmp390_set_interrupt_active_level(bmp390_handle_t *handle, bmp390_interr
 /**
  * @brief      get the interrupt active level
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *level points to a interrupt active level buffer
+ * @param[out] *level points to an interrupt active level buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt active level failed
@@ -1374,7 +1374,7 @@ uint8_t bmp390_fifo_parse(bmp390_handle_t *handle, uint8_t *buf, uint16_t buf_le
  * @brief     set the chip register
  * @param[in] *handle points to a bmp390 handle structure
  * @param[in] reg is the iic register address
- * @param[in] value is the data written to the register
+ * @param[in] value is the data write to the register
  * @return    status code
  *            - 0 success
  *            - 1 write failed

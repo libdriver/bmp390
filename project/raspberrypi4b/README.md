@@ -1,14 +1,14 @@
-### 1. Chip
+### 1. Board
 
-#### 1.1 Chip Info
+#### 1.1 Board Info
 
-chip name : Raspberry Pi 4B.
+Board Name: Raspberry Pi 4B.
 
-iic pin: SCL/SDA GPIO3/GPIO2.
+IIC Pin: SCL/SDA GPIO3/GPIO2.
 
-spi pin: SCLK/MOSI/MISO/CS GPIO11/GPIO10/GPIO9/GPIO8.
+SPI Pin: SCLK/MOSI/MISO/CS GPIO11/GPIO10/GPIO9/GPIO8.
 
-gpio pin: INT GPIO17.
+GPIO Pin: INT GPIO17.
 
 ### 2. Install
 
@@ -78,46 +78,84 @@ find_package(bmp390 REQUIRED)
 
 #### 3.1 Command Instruction
 
-​          bmp390 is a basic command which can test all bmp390 driver function:
+1. Show bmp390 chip and driver information.
 
-​           -i        show bmp390 chip and driver information.
+   ```shell
+   bmp390 (-i | --information)
+   ```
 
-​           -h       show bmp390 help.
+2. Show bmp390 help.
 
-​           -p       show bmp390 pin connections of the current board.
+   ```shell
+   bmp390 (-h | --help)
+   ```
 
-​           -t (reg (-iic | -spi) -a (0 | 1) | read <times> (-iic | -spi) -a (0 | 1)  | int  <times> (-iic | -spi) -a (0 | 1) | fifo  <times> (-iic | -spi) -a (0 | 1))
+3. Show bmp390 pin connections of the current board.
 
-​           -t reg (-iic | -spi) -a (0 | 1)        run bmp390 register test. 
+   ```shell
+   bmp390 (-p | --port)
+   ```
 
-​           -t read <times> (-iic | -spi) -a (0 | 1)        run bmp390 read test. times means the test times. 
+4. Run bmp390 register test.
 
-​           -t int <times> (-iic | -spi) -a (0 | 1)        run bmp390 interrupt test. times means the test times. 
+   ```shell
+   bmp390 (-t reg | --test=reg) [--addr=<0 | 1>] [--interface=<iic | spi>]
+   ```
 
-​           -t fifo <times> (-iic | -spi) -a (0 | 1)        run bmp390 fifo test. times means the test times. 
+5. Run bmp390 read test, times means the test times.
 
-​           -c (read <times> (-iic | -spi) -a (0 | 1) | shot <times> (-iic | -spi) -a (0 | 1) | int <times> (-iic | -spi) -a (0 | 1) | fifo <times> (-iic | -spi) -a (0 | 1) )
+   ```shell
+   bmp390 (-t read | --test=read) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+   ```
 
-​           -c read <times> (-iic | -spi) -a (0 | 1)        run bmp390 read function. times means the read times. 
+6. Run bmp390 interrupt test, times means the test times.
 
-​           -c shot <times> (-iic | -spi) -a (0 | 1)        run bmp390 shot function. times means the read times. 
+   ```shell
+   bmp390 (-t int | --test=int) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+   ```
 
-​           -c int <times> (-iic | -spi) -a (0 | 1)        run bmp390 interrupt function. times means the read times. 
+7. Run bmp390 fifo test, times means the test times. 
 
-​           -c fifo <times> (-iic | -spi) -a (0 | 1)        run bmp390 fifo function. times means the read times. 
+   ```shell
+   bmp390 (-t fifo | --test=fifo) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+   ```
+
+8. Run bmp390 read function, times means the read times.
+
+   ```shell
+   bmp390 (-e read | --example=read) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+   ```
+
+9. Run bmp390 shot function, times means the read times.
+
+   ```shell
+   bmp390 (-e shot | --example=shot) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+   ```
+
+10. Run bmp390 interrupt function, times means the read times. 
+
+    ```shell
+    bmp390 (-e int | --example=int) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+    ```
+
+11. Run bmp390 fifo function, times means the read times.
+
+    ```shell
+    bmp390 (-e fifo | --example=fifo) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>] 
+    ```
 
 #### 3.2 Command Example
 
 ```shell
 ./bmp390 -i
 
-bmp390: chip is Bosch bmp390.
+bmp390: chip is Bosch BMP390.
 bmp390: manufacturer is Bosch.
 bmp390: interface is IIC SPI.
-bmp390: driver version is 2.0.
+bmp390: driver version is 1.0.
 bmp390: min supply voltage is 1.6V.
 bmp390: max supply voltage is 3.6V.
-bmp390: max current is 0.80mA.
+bmp390: max current is 0.73mA.
 bmp390: max temperature is 85.0C.
 bmp390: min temperature is -40.0C.
 ```
@@ -135,15 +173,15 @@ bmp390: INT connected to GPIO17(BCM).
 ```
 
 ```shell
-./bmp390 -t reg -spi -a 0
+./bmp390 -t reg --interface=spi
 
-bmp390: chip is Bosch bmp390.
+bmp390: chip is Bosch BMP390.
 bmp390: manufacturer is Bosch.
 bmp390: interface is IIC SPI.
-bmp390: driver version is 2.0.
+bmp390: driver version is 1.0.
 bmp390: min supply voltage is 1.6V.
 bmp390: max supply voltage is 3.6V.
-bmp390: max current is 0.80mA.
+bmp390: max current is 0.73mA.
 bmp390: max temperature is 85.0C.
 bmp390: min temperature is -40.0C.
 bmp390: start register test.
@@ -158,7 +196,7 @@ bmp390: check addr pin ok.
 bmp390: set addr pin high.
 bmp390: check addr pin ok.
 bmp390: bmp390_set_fifo_watermark/bmp390_get_fifo_watermark test.
-bmp390: set fifo watermark 432.
+bmp390: set fifo watermark 359.
 bmp390: check fifo watermark ok.
 bmp390: bmp390_set_fifo/bmp390_get_fifo test.
 bmp390: set fifo enable.
@@ -338,7 +376,7 @@ bmp390: err is 0x00.
 bmp390: bmp390_get_status.
 bmp390: status is 0x70.
 bmp390: bmp390_get_sensortime.
-bmp390: sensortime is 0x001E66.
+bmp390: sensortime is 0x000531.
 bmp390: bmp390_get_event.
 bmp390: event is power up or softrest.
 bmp390: bmp390_get_interrupt_status.
@@ -349,75 +387,75 @@ bmp390: bmp390_get_fifo_data.
 bmp390: get fifo data is 0x0080.
 bmp390: bmp390_flush_fifo.
 bmp390: flush fifo ok.
-bmp390: bmp390_extmode_en_middle.
-bmp390: extmode en middle ok.
+bmp390: bmp390_get_revision_id.
+bmp390: revision id is 0x01.
 bmp390: bmp390_softreset.
 bmp390: softreset ok.
 bmp390: finish register test.
 ```
 
 ```shell
-./bmp390 -t read 3 -spi -a 0
+./bmp390 -t read --interface=spi --times=3
 
-bmp390: chip is Bosch bmp390.
+bmp390: chip is Bosch BMP390.
 bmp390: manufacturer is Bosch.
 bmp390: interface is IIC SPI.
-bmp390: driver version is 2.0.
+bmp390: driver version is 1.0.
 bmp390: min supply voltage is 1.6V.
 bmp390: max supply voltage is 3.6V.
-bmp390: max current is 0.80mA.
+bmp390: max current is 0.73mA.
 bmp390: max temperature is 85.0C.
 bmp390: min temperature is -40.0C.
 bmp390: start read test.
 bmp390: forced mode read test.
-bmp390: temperature is 27.14c.
-bmp390: pressure is 102571.11pa.
-bmp390: temperature is 27.14c.
-bmp390: pressure is 102570.99pa.
-bmp390: temperature is 27.14c.
-bmp390: pressure is 102570.83pa.
+bmp390: temperature is 27.43C.
+bmp390: pressure is 102585.50Pa.
+bmp390: temperature is 27.44C.
+bmp390: pressure is 102585.60Pa.
+bmp390: temperature is 27.44C.
+bmp390: pressure is 102585.64Pa.
 bmp390: normal mode read test.
-bmp390: temperature is 27.36c.
-bmp390: pressure is 102556.73pa.
-bmp390: temperature is 27.39c.
-bmp390: pressure is 102555.52pa.
-bmp390: temperature is 27.41c.
-bmp390: pressure is 102555.84pa.
+bmp390: temperature is 27.58C.
+bmp390: pressure is 102578.74Pa.
+bmp390: temperature is 27.68C.
+bmp390: pressure is 102572.90Pa.
+bmp390: temperature is 27.73C.
+bmp390: pressure is 102570.55Pa.
 bmp390: finish read test.
 ```
 
 ```shell
-./bmp390 -t int 3 -spi -a 0
+./bmp390 -t int --interface=spi --times=3
 
-bmp390: chip is Bosch bmp390.
+bmp390: chip is Bosch BMP390.
 bmp390: manufacturer is Bosch.
 bmp390: interface is IIC SPI.
-bmp390: driver version is 2.0.
+bmp390: driver version is 1.0.
 bmp390: min supply voltage is 1.6V.
 bmp390: max supply voltage is 3.6V.
-bmp390: max current is 0.80mA.
+bmp390: max current is 0.73mA.
 bmp390: max temperature is 85.0C.
 bmp390: min temperature is -40.0C.
 bmp390: start interrupt test.
-bmp390: temperature is 27.42c.
-bmp390: pressure is 102560.72pa.
-bmp390: temperature is 27.53c.
-bmp390: pressure is 102556.27pa.
-bmp390: temperature is 27.54c.
-bmp390: pressure is 102555.51pa.
+bmp390: temperature is 27.50C.
+bmp390: pressure is 102583.52Pa.
+bmp390: temperature is 27.65C.
+bmp390: pressure is 102572.63Pa.
+bmp390: temperature is 27.71C.
+bmp390: pressure is 102569.44Pa.
 bmp390: finish interrupt test.
 ```
 
 ```shell
-./bmp390 -t fifo 3 -spi -a 0
+./bmp390 -t fifo --interface=spi --times=3
 
-bmp390: chip is Bosch bmp390.
+bmp390: chip is Bosch BMP390.
 bmp390: manufacturer is Bosch.
 bmp390: interface is IIC SPI.
-bmp390: driver version is 2.0.
+bmp390: driver version is 1.0.
 bmp390: min supply voltage is 1.6V.
 bmp390: max supply voltage is 3.6V.
-bmp390: max current is 0.80mA.
+bmp390: max current is 0.73mA.
 bmp390: max temperature is 85.0C.
 bmp390: min temperature is -40.0C.
 bmp390: start fifo test.
@@ -436,415 +474,425 @@ bmp390: finish fifo test.
 ```
 
 ```shell
-./bmp390 -c read 3 -spi -a 0
+./bmp390 -e read --interface=spi --times=3
 
 bmp390: 1/3.
-bmp390: temperature is 28.03C.
-bmp390: pressure is 102563.48Pa.
+bmp390: temperature is 27.56C.
+bmp390: pressure is 102580.27Pa.
 bmp390: 2/3.
-bmp390: temperature is 28.07C.
-bmp390: pressure is 102562.90Pa.
+bmp390: temperature is 27.66C.
+bmp390: pressure is 102574.75Pa.
 bmp390: 3/3.
-bmp390: temperature is 28.08C.
-bmp390: pressure is 102562.76Pa.
+bmp390: temperature is 27.70C.
+bmp390: pressure is 102572.01Pa.
 ```
 
 ```shell
-./bmp390 -c shot 3 -spi -a 0
+./bmp390 -e shot --interface=spi --times=3
 
 bmp390: 1/3.
-bmp390: temperature is 27.76C.
-bmp390: pressure is 102577.23Pa.
+bmp390: temperature is 27.43C.
+bmp390: pressure is 102589.05Pa.
 bmp390: 2/3.
-bmp390: temperature is 27.76C.
-bmp390: pressure is 102577.16Pa.
+bmp390: temperature is 27.43C.
+bmp390: pressure is 102589.04Pa.
 bmp390: 3/3.
-bmp390: temperature is 27.76C.
-bmp390: pressure is 102577.59Pa.
+bmp390: temperature is 27.43C.
+bmp390: pressure is 102589.04Pa.
 ```
 
 ```shell
-./bmp390 -c int 3 -spi -a 0
+./bmp390 -e int --interface=spi --times=3
 
 bmp390: 1/3.
-bmp390: temperature is 27.24C.
-bmp390: pressure is 102567.33Pa.
+bmp390: temperature is 27.39C.
+bmp390: pressure is 102587.89Pa.
 bmp390: 2/3.
-bmp390: temperature is 27.27C.
-bmp390: pressure is 102565.65Pa.
+bmp390: temperature is 27.40C.
+bmp390: pressure is 102587.39Pa.
 bmp390: 3/3.
-bmp390: temperature is 27.33C.
-bmp390: pressure is 102561.62Pa.
+bmp390: temperature is 27.41C.
+bmp390: pressure is 102586.54Pa.
 ```
 
 ```shell
-./bmp390 -c fifo 3 -spi -a 0
+./bmp390 -e fifo --interface=spi --times=3
 
 bmp390: fifo 1/1.
-bmp390: sensortime is 74003.
+bmp390: sensortime is 74187.
 bmp390: fifo 1/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.85C.
 bmp390: fifo 2/75.
-bmp390: pressure is 102544.24Pa.
+bmp390: pressure is 102650.23Pa.
 bmp390: fifo 3/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.85C.
 bmp390: fifo 4/75.
-bmp390: pressure is 102544.46Pa.
+bmp390: pressure is 102649.93Pa.
 bmp390: fifo 5/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.86C.
 bmp390: fifo 6/75.
-bmp390: pressure is 102544.32Pa.
+bmp390: pressure is 102649.73Pa.
 bmp390: fifo 7/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.86C.
 bmp390: fifo 8/75.
-bmp390: pressure is 102544.07Pa.
+bmp390: pressure is 102649.66Pa.
 bmp390: fifo 9/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.86C.
 bmp390: fifo 10/75.
-bmp390: pressure is 102544.26Pa.
+bmp390: pressure is 102649.59Pa.
 bmp390: fifo 11/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.86C.
 bmp390: fifo 12/75.
-bmp390: pressure is 102543.92Pa.
+bmp390: pressure is 102649.53Pa.
 bmp390: fifo 13/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.87C.
 bmp390: fifo 14/75.
-bmp390: pressure is 102544.07Pa.
+bmp390: pressure is 102649.39Pa.
 bmp390: fifo 15/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.87C.
 bmp390: fifo 16/75.
-bmp390: pressure is 102544.20Pa.
+bmp390: pressure is 102649.25Pa.
 bmp390: fifo 17/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.87C.
 bmp390: fifo 18/75.
-bmp390: pressure is 102544.71Pa.
+bmp390: pressure is 102649.03Pa.
 bmp390: fifo 19/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.87C.
 bmp390: fifo 20/75.
-bmp390: pressure is 102544.90Pa.
+bmp390: pressure is 102648.95Pa.
 bmp390: fifo 21/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.87C.
 bmp390: fifo 22/75.
-bmp390: pressure is 102545.38Pa.
+bmp390: pressure is 102648.87Pa.
 bmp390: fifo 23/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.87C.
 bmp390: fifo 24/75.
-bmp390: pressure is 102545.42Pa.
+bmp390: pressure is 102648.82Pa.
 bmp390: fifo 25/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.88C.
 bmp390: fifo 26/75.
-bmp390: pressure is 102544.96Pa.
+bmp390: pressure is 102648.72Pa.
 bmp390: fifo 27/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.88C.
 bmp390: fifo 28/75.
-bmp390: pressure is 102544.51Pa.
+bmp390: pressure is 102648.55Pa.
 bmp390: fifo 29/75.
-bmp390: temperature is 27.74C.
+bmp390: temperature is 25.88C.
 bmp390: fifo 30/75.
-bmp390: pressure is 102544.64Pa.
+bmp390: pressure is 102648.48Pa.
 bmp390: fifo 31/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.88C.
 bmp390: fifo 32/75.
-bmp390: pressure is 102544.95Pa.
+bmp390: pressure is 102648.38Pa.
 bmp390: fifo 33/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.88C.
 bmp390: fifo 34/75.
-bmp390: pressure is 102544.76Pa.
+bmp390: pressure is 102648.45Pa.
 bmp390: fifo 35/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.88C.
 bmp390: fifo 36/75.
-bmp390: pressure is 102544.40Pa.
+bmp390: pressure is 102648.48Pa.
 bmp390: fifo 37/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.89C.
 bmp390: fifo 38/75.
-bmp390: pressure is 102544.09Pa.
+bmp390: pressure is 102648.40Pa.
 bmp390: fifo 39/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.89C.
 bmp390: fifo 40/75.
-bmp390: pressure is 102543.14Pa.
+bmp390: pressure is 102648.34Pa.
 bmp390: fifo 41/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.89C.
 bmp390: fifo 42/75.
-bmp390: pressure is 102543.49Pa.
+bmp390: pressure is 102648.29Pa.
 bmp390: fifo 43/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.89C.
 bmp390: fifo 44/75.
-bmp390: pressure is 102544.12Pa.
+bmp390: pressure is 102648.21Pa.
 bmp390: fifo 45/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.89C.
 bmp390: fifo 46/75.
-bmp390: pressure is 102544.66Pa.
+bmp390: pressure is 102648.16Pa.
 bmp390: fifo 47/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.89C.
 bmp390: fifo 48/75.
-bmp390: pressure is 102544.75Pa.
+bmp390: pressure is 102648.13Pa.
 bmp390: fifo 49/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.89C.
 bmp390: fifo 50/75.
-bmp390: pressure is 102544.75Pa.
+bmp390: pressure is 102648.05Pa.
 bmp390: fifo 51/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.89C.
 bmp390: fifo 52/75.
-bmp390: pressure is 102544.89Pa.
+bmp390: pressure is 102647.96Pa.
 bmp390: fifo 53/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.90C.
 bmp390: fifo 54/75.
-bmp390: pressure is 102545.13Pa.
+bmp390: pressure is 102647.93Pa.
 bmp390: fifo 55/75.
-bmp390: temperature is 27.75C.
+bmp390: temperature is 25.90C.
 bmp390: fifo 56/75.
-bmp390: pressure is 102545.30Pa.
+bmp390: pressure is 102647.86Pa.
 bmp390: fifo 57/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.90C.
 bmp390: fifo 58/75.
-bmp390: pressure is 102545.94Pa.
+bmp390: pressure is 102647.97Pa.
 bmp390: fifo 59/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.90C.
 bmp390: fifo 60/75.
-bmp390: pressure is 102545.20Pa.
+bmp390: pressure is 102647.93Pa.
 bmp390: fifo 61/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.90C.
 bmp390: fifo 62/75.
-bmp390: pressure is 102545.24Pa.
+bmp390: pressure is 102647.94Pa.
 bmp390: fifo 63/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.90C.
 bmp390: fifo 64/75.
-bmp390: pressure is 102545.43Pa.
+bmp390: pressure is 102647.92Pa.
 bmp390: fifo 65/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.91C.
 bmp390: fifo 66/75.
-bmp390: pressure is 102545.28Pa.
+bmp390: pressure is 102647.83Pa.
 bmp390: fifo 67/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.91C.
 bmp390: fifo 68/75.
-bmp390: pressure is 102545.37Pa.
+bmp390: pressure is 102647.76Pa.
 bmp390: fifo 69/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.91C.
 bmp390: fifo 70/75.
-bmp390: pressure is 102545.12Pa.
+bmp390: pressure is 102647.70Pa.
 bmp390: fifo 71/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.91C.
 bmp390: fifo 72/75.
-bmp390: pressure is 102545.15Pa.
+bmp390: pressure is 102647.70Pa.
 bmp390: fifo 73/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.91C.
 bmp390: fifo 74/75.
-bmp390: pressure is 102545.09Pa.
+bmp390: pressure is 102647.71Pa.
 bmp390: fifo 75/75.
-bmp390: sensortime is 149593.
-bmp390: fifo 1/9.
-bmp390: temperature is 27.76C.
-bmp390: fifo 2/9.
-bmp390: pressure is 102545.64Pa.
-bmp390: fifo 3/9.
-bmp390: temperature is 27.77C.
-bmp390: fifo 4/9.
-bmp390: pressure is 102545.91Pa.
-bmp390: fifo 5/9.
-bmp390: temperature is 27.77C.
-bmp390: fifo 6/9.
-bmp390: pressure is 102545.67Pa.
-bmp390: fifo 7/9.
-bmp390: temperature is 27.77C.
-bmp390: fifo 8/9.
-bmp390: pressure is 102546.00Pa.
-bmp390: fifo 9/9.
-bmp390: sensortime is 158375.
+bmp390: sensortime is 149750.
+bmp390: fifo 1/11.
+bmp390: temperature is 25.91C.
+bmp390: fifo 2/11.
+bmp390: pressure is 102647.75Pa.
+bmp390: fifo 3/11.
+bmp390: temperature is 25.91C.
+bmp390: fifo 4/11.
+bmp390: pressure is 102647.77Pa.
+bmp390: fifo 5/11.
+bmp390: temperature is 25.92C.
+bmp390: fifo 6/11.
+bmp390: pressure is 102647.75Pa.
+bmp390: fifo 7/11.
+bmp390: temperature is 25.92C.
+bmp390: fifo 8/11.
+bmp390: pressure is 102647.78Pa.
+bmp390: fifo 9/11.
+bmp390: temperature is 25.92C.
+bmp390: fifo 10/11.
+bmp390: pressure is 102647.85Pa.
+bmp390: fifo 11/11.
+bmp390: sensortime is 161426.
 bmp390: fifo 1/75.
-bmp390: temperature is 27.76C.
+bmp390: temperature is 25.92C.
 bmp390: fifo 2/75.
-bmp390: pressure is 102545.72Pa.
+bmp390: pressure is 102647.83Pa.
 bmp390: fifo 3/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.92C.
 bmp390: fifo 4/75.
-bmp390: pressure is 102545.95Pa.
+bmp390: pressure is 102647.86Pa.
 bmp390: fifo 5/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.92C.
 bmp390: fifo 6/75.
-bmp390: pressure is 102545.63Pa.
+bmp390: pressure is 102647.87Pa.
 bmp390: fifo 7/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.92C.
 bmp390: fifo 8/75.
-bmp390: pressure is 102545.56Pa.
+bmp390: pressure is 102647.83Pa.
 bmp390: fifo 9/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 10/75.
-bmp390: pressure is 102545.54Pa.
+bmp390: pressure is 102647.76Pa.
 bmp390: fifo 11/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 12/75.
-bmp390: pressure is 102545.30Pa.
+bmp390: pressure is 102647.73Pa.
 bmp390: fifo 13/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 14/75.
-bmp390: pressure is 102545.71Pa.
+bmp390: pressure is 102647.68Pa.
 bmp390: fifo 15/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 16/75.
-bmp390: pressure is 102546.06Pa.
+bmp390: pressure is 102647.62Pa.
 bmp390: fifo 17/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 18/75.
-bmp390: pressure is 102546.06Pa.
+bmp390: pressure is 102647.59Pa.
 bmp390: fifo 19/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 20/75.
-bmp390: pressure is 102546.33Pa.
+bmp390: pressure is 102647.56Pa.
 bmp390: fifo 21/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 22/75.
-bmp390: pressure is 102546.18Pa.
+bmp390: pressure is 102647.55Pa.
 bmp390: fifo 23/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 24/75.
-bmp390: pressure is 102546.64Pa.
+bmp390: pressure is 102647.40Pa.
 bmp390: fifo 25/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 26/75.
-bmp390: pressure is 102546.66Pa.
+bmp390: pressure is 102647.29Pa.
 bmp390: fifo 27/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.93C.
 bmp390: fifo 28/75.
-bmp390: pressure is 102545.98Pa.
+bmp390: pressure is 102647.20Pa.
 bmp390: fifo 29/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 30/75.
-bmp390: pressure is 102546.31Pa.
+bmp390: pressure is 102647.21Pa.
 bmp390: fifo 31/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 32/75.
-bmp390: pressure is 102546.63Pa.
+bmp390: pressure is 102647.16Pa.
 bmp390: fifo 33/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 34/75.
-bmp390: pressure is 102546.66Pa.
+bmp390: pressure is 102647.16Pa.
 bmp390: fifo 35/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 36/75.
-bmp390: pressure is 102546.90Pa.
+bmp390: pressure is 102647.09Pa.
 bmp390: fifo 37/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 38/75.
-bmp390: pressure is 102546.52Pa.
+bmp390: pressure is 102647.05Pa.
 bmp390: fifo 39/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 40/75.
-bmp390: pressure is 102545.66Pa.
+bmp390: pressure is 102646.95Pa.
 bmp390: fifo 41/75.
-bmp390: temperature is 27.77C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 42/75.
-bmp390: pressure is 102545.67Pa.
+bmp390: pressure is 102646.81Pa.
 bmp390: fifo 43/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 44/75.
-bmp390: pressure is 102546.13Pa.
+bmp390: pressure is 102646.73Pa.
 bmp390: fifo 45/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 46/75.
-bmp390: pressure is 102546.42Pa.
+bmp390: pressure is 102646.63Pa.
 bmp390: fifo 47/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 48/75.
-bmp390: pressure is 102546.42Pa.
+bmp390: pressure is 102646.53Pa.
 bmp390: fifo 49/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 50/75.
-bmp390: pressure is 102546.53Pa.
+bmp390: pressure is 102646.48Pa.
 bmp390: fifo 51/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 52/75.
-bmp390: pressure is 102546.40Pa.
+bmp390: pressure is 102646.35Pa.
 bmp390: fifo 53/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 54/75.
-bmp390: pressure is 102546.28Pa.
+bmp390: pressure is 102646.20Pa.
 bmp390: fifo 55/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.94C.
 bmp390: fifo 56/75.
-bmp390: pressure is 102546.41Pa.
+bmp390: pressure is 102646.21Pa.
 bmp390: fifo 57/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.95C.
 bmp390: fifo 58/75.
-bmp390: pressure is 102546.38Pa.
+bmp390: pressure is 102646.24Pa.
 bmp390: fifo 59/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.95C.
 bmp390: fifo 60/75.
-bmp390: pressure is 102546.92Pa.
+bmp390: pressure is 102646.20Pa.
 bmp390: fifo 61/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.95C.
 bmp390: fifo 62/75.
-bmp390: pressure is 102546.47Pa.
+bmp390: pressure is 102646.19Pa.
 bmp390: fifo 63/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.95C.
 bmp390: fifo 64/75.
-bmp390: pressure is 102546.49Pa.
+bmp390: pressure is 102646.15Pa.
 bmp390: fifo 65/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.95C.
 bmp390: fifo 66/75.
-bmp390: pressure is 102546.20Pa.
+bmp390: pressure is 102646.06Pa.
 bmp390: fifo 67/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.95C.
 bmp390: fifo 68/75.
-bmp390: pressure is 102546.26Pa.
+bmp390: pressure is 102645.99Pa.
 bmp390: fifo 69/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.95C.
 bmp390: fifo 70/75.
-bmp390: pressure is 102546.20Pa.
+bmp390: pressure is 102645.87Pa.
 bmp390: fifo 71/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.95C.
 bmp390: fifo 72/75.
-bmp390: pressure is 102545.98Pa.
+bmp390: pressure is 102645.80Pa.
 bmp390: fifo 73/75.
-bmp390: temperature is 27.78C.
+bmp390: temperature is 25.95C.
 bmp390: fifo 74/75.
-bmp390: pressure is 102546.12Pa.
+bmp390: pressure is 102645.73Pa.
 bmp390: fifo 75/75.
-bmp390: sensortime is 233561.
-bmp390: fifo 1/9.
-bmp390: temperature is 27.78C.
-bmp390: fifo 2/9.
-bmp390: pressure is 102545.81Pa.
-bmp390: fifo 3/9.
-bmp390: temperature is 27.78C.
-bmp390: fifo 4/9.
-bmp390: pressure is 102546.12Pa.
-bmp390: fifo 5/9.
-bmp390: temperature is 27.78C.
-bmp390: fifo 6/9.
-bmp390: pressure is 102545.91Pa.
-bmp390: fifo 7/9.
-bmp390: temperature is 27.79C.
-bmp390: fifo 8/9.
-bmp390: pressure is 102546.22Pa.
-bmp390: fifo 9/9.
-bmp390: sensortime is 242347.
+bmp390: sensortime is 235766.
+bmp390: fifo 1/11.
+bmp390: temperature is 25.95C.
+bmp390: fifo 2/11.
+bmp390: pressure is 102645.58Pa.
+bmp390: fifo 3/11.
+bmp390: temperature is 25.95C.
+bmp390: fifo 4/11.
+bmp390: pressure is 102645.44Pa.
+bmp390: fifo 5/11.
+bmp390: temperature is 25.95C.
+bmp390: fifo 6/11.
+bmp390: pressure is 102645.31Pa.
+bmp390: fifo 7/11.
+bmp390: temperature is 25.95C.
+bmp390: fifo 8/11.
+bmp390: pressure is 102645.16Pa.
+bmp390: fifo 9/11.
+bmp390: temperature is 25.96C.
+bmp390: fifo 10/11.
+bmp390: pressure is 102645.00Pa.
+bmp390: fifo 11/11.
+bmp390: sensortime is 247482.
 bmp390: finish fifo read.
 ```
 
 ```shell
 ./bmp390 -h
 
-bmp390 -i
-	show bmp390 chip and driver information.
-bmp390 -h
-	show bmp390 help.
-bmp390 -p
-	show bmp390 pin connections of the current board.
-bmp390 -t reg (-iic | -spi) -a (0 | 1)
-	run bmp390 register test.
-bmp390 -t read <times> (-iic | -spi) -a (0 | 1)
-	run bmp390 read test.times means the test times.
-bmp390 -t int <times> (-iic | -spi) -a (0 | 1)
-	run bmp390 interrupt test.times means the test times.
-bmp390 -t fifo <times> (-iic | -spi) -a (0 | 1)
-	run bmp390 fifo test.times means the test times.
-bmp390 -c read <times> (-iic | -spi) -a (0 | 1)
-	run bmp390 read function.times means the read times.
-bmp390 -c shot <times> (-iic | -spi) -a (0 | 1)
-	run bmp390 shot function.times means the read times.
-bmp390 -c int <times> (-iic | -spi) -a (0 | 1)
-	run bmp390 interrupt function.times means the read times.
-bmp390 -c fifo <times> (-iic | -spi) -a (0 | 1)
-	run bmp390 fifo function.times means the read times.
+Usage:
+  bmp390 (-i | --information)
+  bmp390 (-h | --help)
+  bmp390 (-p | --port)
+  bmp390 (-t reg | --test=reg) [--addr=<0 | 1>] [--interface=<iic | spi>]
+  bmp390 (-t read | --test=read) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+  bmp390 (-t int | --test=int) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+  bmp390 (-t fifo | --test=fifo) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+  bmp390 (-e read | --example=read) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+  bmp390 (-e shot | --example=shot) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+  bmp390 (-e int | --example=int) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+  bmp390 (-e fifo | --example=fifo) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
+
+Options:
+      --addr=<0 | 1>                 Set the chip iic address.([default: 0])
+  -e <read | shot | int | fifo>, --example=<read | shot | int | fifo>
+                                     Run the driver example.
+  -h, --help                         Show the help.
+  -i, --information                  Show the chip information.
+      --interface=<iic | spi>        Set the chip interface.([default: iic])
+  -p, --port                         Display the pin connections of the current board.
+  -t <reg | read | int | fifo>, --test=<reg | read | int | fifo>
+                                     Run the driver test.
+      --times=<num>                  Set the running times.([default: 3])
 ```
 
