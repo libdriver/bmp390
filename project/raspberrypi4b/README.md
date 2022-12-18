@@ -74,6 +74,10 @@ Find the compiled library in CMake.
 find_package(bmp390 REQUIRED)
 ```
 
+#### 2.4 Problem
+
+There is some unknown problem in the gpio interrupt or data reading of bmp388 on the raspberry board.FIFO reading always failed.
+
 ### 3.BMP390
 
 #### 3.1 Command Instruction
