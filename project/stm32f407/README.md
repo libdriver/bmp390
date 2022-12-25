@@ -68,43 +68,43 @@ We use '\n' to wrap lines.If your serial port assistant displays exceptions (e.g
    bmp390 (-t reg | --test=reg) [--addr=<0 | 1>] [--interface=<iic | spi>]
    ```
 
-5. Run bmp390 read test, times means the test times.
+5. Run bmp390 read test, num means the test times.
 
    ```shell
    bmp390 (-t read | --test=read) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
    ```
 
-6. Run bmp390 interrupt test, times means the test times.
+6. Run bmp390 interrupt test, num means the test times.
 
    ```shell
    bmp390 (-t int | --test=int) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
    ```
 
-7. Run bmp390 fifo test, times means the test times. 
+7. Run bmp390 fifo test, num means the test times. 
 
    ```shell
    bmp390 (-t fifo | --test=fifo) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
    ```
 
-8. Run bmp390 read function, times means the read times.
+8. Run bmp390 read function, num means the read times.
 
    ```shell
    bmp390 (-e read | --example=read) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
    ```
 
-9. Run bmp390 shot function, times means the read times.
+9. Run bmp390 shot function, num means the read times.
 
    ```shell
    bmp390 (-e shot | --example=shot) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
    ```
 
-10. Run bmp390 interrupt function, times means the read times. 
+10. Run bmp390 interrupt function, num means the read times. 
 
     ```shell
     bmp390 (-e int | --example=int) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>]
     ```
 
-11. Run bmp390 fifo function, times means the read times.
+11. Run bmp390 fifo function, num means the read times.
 
     ```shell
     bmp390 (-e fifo | --example=fifo) [--addr=<0 | 1>] [--interface=<iic | spi>] [--times=<num>] 
