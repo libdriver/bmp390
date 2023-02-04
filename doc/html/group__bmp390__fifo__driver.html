@@ -121,10 +121,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga3752cd63670f0209ce7d1d6091d07b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the fifo stopping on full status  <a href="group__bmp390__fifo__driver.html#ga3752cd63670f0209ce7d1d6091d07b29">More...</a><br /></td></tr>
 <tr class="separator:ga3752cd63670f0209ce7d1d6091d07b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9186f64723fc0b400c5b2350df07157e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bmp390__fifo__driver.html#ga9186f64723fc0b400c5b2350df07157e">bmp390_set_fifo_sensortime_on</a> (<a class="el" href="group__bmp390__driver.html#gafb5bd91974bec5e97debdfff5e9e68ab">bmp390_handle_t</a> *handle, <a class="el" href="group__bmp390__driver.html#ga8fbc7b2b6c8c18d945ee066090e32f60">bmp390_bool_t</a> enable)</td></tr>
-<tr class="memdesc:ga9186f64723fc0b400c5b2350df07157e"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable or disable the fifo sensortime on  <a href="group__bmp390__fifo__driver.html#ga9186f64723fc0b400c5b2350df07157e">More...</a><br /></td></tr>
+<tr class="memdesc:ga9186f64723fc0b400c5b2350df07157e"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable or disable the fifo sensor time on  <a href="group__bmp390__fifo__driver.html#ga9186f64723fc0b400c5b2350df07157e">More...</a><br /></td></tr>
 <tr class="separator:ga9186f64723fc0b400c5b2350df07157e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad99ea070766142ff14691d10c1f1c57d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bmp390__fifo__driver.html#gad99ea070766142ff14691d10c1f1c57d">bmp390_get_fifo_sensortime_on</a> (<a class="el" href="group__bmp390__driver.html#gafb5bd91974bec5e97debdfff5e9e68ab">bmp390_handle_t</a> *handle, <a class="el" href="group__bmp390__driver.html#ga8fbc7b2b6c8c18d945ee066090e32f60">bmp390_bool_t</a> *enable)</td></tr>
-<tr class="memdesc:gad99ea070766142ff14691d10c1f1c57d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the fifo sensortime on status  <a href="group__bmp390__fifo__driver.html#gad99ea070766142ff14691d10c1f1c57d">More...</a><br /></td></tr>
+<tr class="memdesc:gad99ea070766142ff14691d10c1f1c57d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the fifo sensor time on status  <a href="group__bmp390__fifo__driver.html#gad99ea070766142ff14691d10c1f1c57d">More...</a><br /></td></tr>
 <tr class="separator:gad99ea070766142ff14691d10c1f1c57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1da99909a4d1b912d93c0a1e8424cb95"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bmp390__fifo__driver.html#ga1da99909a4d1b912d93c0a1e8424cb95">bmp390_set_fifo_pressure_on</a> (<a class="el" href="group__bmp390__driver.html#gafb5bd91974bec5e97debdfff5e9e68ab">bmp390_handle_t</a> *handle, <a class="el" href="group__bmp390__driver.html#ga8fbc7b2b6c8c18d945ee066090e32f60">bmp390_bool_t</a> enable)</td></tr>
 <tr class="memdesc:ga1da99909a4d1b912d93c0a1e8424cb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable or disable the fifo pressure on  <a href="group__bmp390__fifo__driver.html#ga1da99909a4d1b912d93c0a1e8424cb95">More...</a><br /></td></tr>
@@ -535,7 +535,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>get the fifo sensortime on status </p>
+<p>get the fifo sensor time on status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
@@ -545,7 +545,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code<ul>
 <li>0 success</li>
-<li>1 get fifo sensortime on failed</li>
+<li>1 get fifo sensor time on failed</li>
 <li>2 handle is NULL</li>
 <li>3 handle is not initialized </li>
 </ul>
@@ -965,7 +965,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>enable or disable the fifo sensortime on </p>
+<p>enable or disable the fifo sensor time on </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
@@ -975,7 +975,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code<ul>
 <li>0 success</li>
-<li>1 set fifo sensortime on failed</li>
+<li>1 set fifo sensor time on failed</li>
 <li>2 handle is NULL</li>
 <li>3 handle is not initialized </li>
 </ul>

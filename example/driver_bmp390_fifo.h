@@ -56,10 +56,10 @@ extern "C"{
 #define BMP390_FIFO_DEFAULT_IIC_WATCHDOG_PERIOD      BMP390_IIC_WATCHDOG_PERIOD_40_MS         /**< set watchdog timer period 40ms */
 #define BMP390_FIFO_DEFAULT_FIFO_STOP_ON_FULL        BMP390_BOOL_FALSE                        /**< disable fifo stop on full */
 #define BMP390_FIFO_DEFAULT_FIFO_WATERMARK           256                                      /**< 256 fifo watermark */
-#define BMP390_FIFO_DEFAULT_FIFO_SENSORTIME_ON       BMP390_BOOL_TRUE                         /**< enable fifo sensortime on */
+#define BMP390_FIFO_DEFAULT_FIFO_SENSORTIME_ON       BMP390_BOOL_TRUE                         /**< enable fifo sensor time on */
 #define BMP390_FIFO_DEFAULT_FIFO_PRESSURE_ON         BMP390_BOOL_TRUE                         /**< enable fifo pressure on */
 #define BMP390_FIFO_DEFAULT_FIFO_TEMPERATURE_ON      BMP390_BOOL_TRUE                         /**< enable fifo temperature on */
-#define BMP390_FIFO_DEFAULT_FIFO_SUBSAMPLING         0                                        /**< fifo subsamping */
+#define BMP390_FIFO_DEFAULT_FIFO_SUBSAMPLING         0                                        /**< fifo subsampling */
 #define BMP390_FIFO_DEFAULT_FIFO_DATA_SOURCE         BMP390_FIFO_DATA_SOURCE_FILTERED         /**< fifo data source filtered */
 #define BMP390_FIFO_DEFAULT_INTERRUPT_PIN_TYPE       BMP390_INTERRUPT_PIN_TYPE_PUSH_PULL      /**< interrupt pin type push pull */
 #define BMP390_FIFO_DEFAULT_INTERRUPT_ACTIVE_LEVEL   BMP390_INTERRUPT_ACTIVE_LEVEL_HIGHER     /**< interrupt pin active level higher */

@@ -162,7 +162,7 @@ uint8_t bmp390_shot_init(bmp390_interface_t interface, bmp390_address_t addr_pin
         return 1;
     }
     
-    /* set default temperature oversamping */
+    /* set default temperature oversampling */
     res = bmp390_set_temperature_oversampling(&gs_handle, BMP390_SHOT_DEFAULT_TEMPERATURE_OVERSAMPLING);
     if (res != 0)
     {
@@ -208,7 +208,7 @@ uint8_t bmp390_shot_init(bmp390_interface_t interface, bmp390_address_t addr_pin
 /**
  * @brief      shot example read
  * @param[out] *temperature_c points a converted temperature data buffer
- * @param[out] *pressure_pa points a converted pressrue data buffer
+ * @param[out] *pressure_pa points a converted pressure data buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed
