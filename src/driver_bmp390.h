@@ -235,7 +235,7 @@ typedef enum
 {
     BMP390_FRAME_TYPE_TEMPERATURE = 0x01,        /**< temperature frame type */
     BMP390_FRAME_TYPE_PRESSURE    = 0x02,        /**< pressure frame type */
-    BMP390_FRAME_TYPE_SENSORTIME  = 0x03,        /**< sensortime frame type */
+    BMP390_FRAME_TYPE_SENSORTIME  = 0x03,        /**< sensor time frame type */
 } bmp390_frame_type_t;
 
 /**
@@ -594,12 +594,12 @@ uint8_t bmp390_get_error(bmp390_handle_t *handle, uint8_t *err);
 uint8_t bmp390_get_status(bmp390_handle_t *handle, uint8_t *status);
 
 /**
- * @brief      get the sensortime
+ * @brief      get the sensor time
  * @param[in]  *handle points to a bmp390 handle structure
- * @param[out] *t points to a timerstamp buffer
+ * @param[out] *t points to a timestamp buffer
  * @return     status code
  *             - 0 success
- *             - 1 get sensortime failed
+ *             - 1 get sensor time failed
  *             - 2 handle is NULL
  *             - 3 handle is not initialized
  * @note       none
@@ -698,7 +698,7 @@ uint8_t bmp390_set_iic_watchdog_period(bmp390_handle_t *handle, bmp390_iic_watch
 uint8_t bmp390_get_iic_watchdog_period(bmp390_handle_t *handle, bmp390_iic_watchdog_period_t *period);
 
 /**
- * @brief     enable or disable the pressrue
+ * @brief     enable or disable the pressure
  * @param[in] *handle points to a bmp390 handle structure
  * @param[in] enable is a bool value
  * @return    status code
@@ -1188,12 +1188,12 @@ uint8_t bmp390_set_fifo_stop_on_full(bmp390_handle_t *handle, bmp390_bool_t enab
 uint8_t bmp390_get_fifo_stop_on_full(bmp390_handle_t *handle, bmp390_bool_t *enable);
 
 /**
- * @brief     enable or disable the fifo sensortime on
+ * @brief     enable or disable the fifo sensor time on
  * @param[in] *handle points to a bmp390 handle structure
  * @param[in] enable is a bool value
  * @return    status code
  *            - 0 success
- *            - 1 set fifo sensortime on failed
+ *            - 1 set fifo sensor time on failed
  *            - 2 handle is NULL
  *            - 3 handle is not initialized
  * @note      none
@@ -1201,12 +1201,12 @@ uint8_t bmp390_get_fifo_stop_on_full(bmp390_handle_t *handle, bmp390_bool_t *ena
 uint8_t bmp390_set_fifo_sensortime_on(bmp390_handle_t *handle, bmp390_bool_t enable);
 
 /**
- * @brief      get the fifo sensortime on status
+ * @brief      get the fifo sensor time on status
  * @param[in]  *handle points to a bmp390 handle structure
  * @param[out] *enable points to a bool buffer
  * @return     status code
  *             - 0 success
- *             - 1 get fifo sensortime on failed
+ *             - 1 get fifo sensor time on failed
  *             - 2 handle is NULL
  *             - 3 handle is not initialized
  * @note       none

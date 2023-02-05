@@ -335,41 +335,41 @@ uint8_t bmp390_register_test(bmp390_interface_t interface, bmp390_address_t addr
     res = bmp390_set_fifo_sensortime_on(&gs_handle, BMP390_BOOL_TRUE);
     if (res != 0)
     {
-        bmp390_interface_debug_print("bmp390: set fifo sensortime on failed.\n");
+        bmp390_interface_debug_print("bmp390: set fifo sensor time on failed.\n");
         (void)bmp390_deinit(&gs_handle);
         
         return 1;
     }
-    bmp390_interface_debug_print("bmp390: set fifo sensortime on enable.\n");
+    bmp390_interface_debug_print("bmp390: set fifo sensor time on enable.\n");
     res = bmp390_get_fifo_sensortime_on(&gs_handle, (bmp390_bool_t *)&enable);
     if (res != 0)
     {
-        bmp390_interface_debug_print("bmp390: get fifo sensortime on failed.\n");
+        bmp390_interface_debug_print("bmp390: get fifo sensor time on failed.\n");
         (void)bmp390_deinit(&gs_handle);
         
         return 1;
     }
-    bmp390_interface_debug_print("bmp390: check fifo sensortime on %s.\n", enable==BMP390_BOOL_TRUE?"ok":"error");
+    bmp390_interface_debug_print("bmp390: check fifo sensor time on %s.\n", enable==BMP390_BOOL_TRUE?"ok":"error");
     
     /* disable */
     res = bmp390_set_fifo_sensortime_on(&gs_handle, BMP390_BOOL_FALSE);
     if (res != 0)
     {
-        bmp390_interface_debug_print("bmp390: set fifo sensortime on failed.\n");
+        bmp390_interface_debug_print("bmp390: set fifo sensor time on failed.\n");
         (void)bmp390_deinit(&gs_handle);
         
         return 1;
     }
-    bmp390_interface_debug_print("bmp390: set fifo sensortime on disable.\n");
+    bmp390_interface_debug_print("bmp390: set fifo sensor time on disable.\n");
     res = bmp390_get_fifo_sensortime_on(&gs_handle, (bmp390_bool_t *)&enable);
     if (res != 0)
     {
-        bmp390_interface_debug_print("bmp390: get fifo sensortime on failed.\n");
+        bmp390_interface_debug_print("bmp390: get fifo sensor time on failed.\n");
         (void)bmp390_deinit(&gs_handle);
         
         return 1;
     }
-    bmp390_interface_debug_print("bmp390: check fifo sensortime on %s.\n", enable==BMP390_BOOL_FALSE?"ok":"error");
+    bmp390_interface_debug_print("bmp390: check fifo sensor time on %s.\n", enable==BMP390_BOOL_FALSE?"ok":"error");
     
     /* bmp390_set_fifo_pressure_on/bmp390_get_fifo_pressure_on test */
     bmp390_interface_debug_print("bmp390: bmp390_set_fifo_pressure_on/bmp390_get_fifo_pressure_on test.\n");
@@ -525,7 +525,7 @@ uint8_t bmp390_register_test(bmp390_interface_t interface, bmp390_address_t addr
     /* bmp390_set_interrupt_pin_type/bmp390_get_interrupt_pin_type test */
     bmp390_interface_debug_print("bmp390: bmp390_set_interrupt_pin_type/bmp390_get_interrupt_pin_type test.\n");
     
-    /* set push pull */
+    /* set push-pull */
     res = bmp390_set_interrupt_pin_type(&gs_handle, BMP390_INTERRUPT_PIN_TYPE_PUSH_PULL);
     if (res != 0)
     {
@@ -1870,12 +1870,12 @@ uint8_t bmp390_register_test(bmp390_interface_t interface, bmp390_address_t addr
     res = bmp390_get_sensortime(&gs_handle, (uint32_t *)&sensortime);
     if (res != 0)
     {
-        bmp390_interface_debug_print("bmp390: get sensortime failed.\n");
+        bmp390_interface_debug_print("bmp390: get sensor time failed.\n");
         (void)bmp390_deinit(&gs_handle);
         
         return 1;
     }
-    bmp390_interface_debug_print("bmp390: sensortime is 0x%06X.\n", (uint32_t)sensortime);
+    bmp390_interface_debug_print("bmp390: sensor time is 0x%06X.\n", (uint32_t)sensortime);
     
     /* bmp390_get_event */
     bmp390_interface_debug_print("bmp390: bmp390_get_event.\n");
@@ -1887,7 +1887,7 @@ uint8_t bmp390_register_test(bmp390_interface_t interface, bmp390_address_t addr
         
         return 1;
     }
-    bmp390_interface_debug_print("bmp390: event is %s.\n", event==BMP390_EVENT_NONE?"none":"power up or softrest");
+    bmp390_interface_debug_print("bmp390: event is %s.\n", event==BMP390_EVENT_NONE?"none":"power up or soft rest");
     
     /* bmp390_get_interrupt_status */
     bmp390_interface_debug_print("bmp390: bmp390_get_interrupt_status.\n");
@@ -1954,12 +1954,12 @@ uint8_t bmp390_register_test(bmp390_interface_t interface, bmp390_address_t addr
     res = bmp390_softreset(&gs_handle);
     if (res != 0)
     {
-        bmp390_interface_debug_print("bmp390: bmp390 softreset failed.\n");
+        bmp390_interface_debug_print("bmp390: bmp390 soft reset failed.\n");
         (void)bmp390_deinit(&gs_handle);
         
         return 1;
     }
-    bmp390_interface_debug_print("bmp390: softreset %s.\n", res?"error":"ok");
+    bmp390_interface_debug_print("bmp390: soft reset %s.\n", res?"error":"ok");
     
     /* finish register test */
     bmp390_interface_debug_print("bmp390: finish register test.\n");

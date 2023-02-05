@@ -165,12 +165,12 @@ void bmp390_interface_fifo_receive_callback(uint8_t type)
                 else if (gs_frame[i].type == BMP390_FRAME_TYPE_SENSORTIME)
                 {
                     bmp390_interface_debug_print("bmp390: fifo %d/%d.\n", i + 1, frame_len);
-                    bmp390_interface_debug_print("bmp390: sensortime is %d.\n", gs_frame[i].raw);
+                    bmp390_interface_debug_print("bmp390: sensor time is %d.\n", gs_frame[i].raw);
                 }
                 else
                 {
                     bmp390_interface_debug_print("bmp390: fifo %d/%d.\n", i + 1, frame_len);
-                    bmp390_interface_debug_print("bmp390: unknow type.\n");
+                    bmp390_interface_debug_print("bmp390: unknown type.\n");
                 }
             }
             gs_fifo_watermark_flag = 1;
@@ -207,12 +207,12 @@ void bmp390_interface_fifo_receive_callback(uint8_t type)
                 else if (gs_frame[i].type == BMP390_FRAME_TYPE_SENSORTIME)
                 {
                     bmp390_interface_debug_print("bmp390: fifo %d/%d.\n", i + 1, frame_len);
-                    bmp390_interface_debug_print("bmp390: sensortime is %d.\n", gs_frame[i].raw);
+                    bmp390_interface_debug_print("bmp390: sensor time is %d.\n", gs_frame[i].raw);
                 }
                 else
                 {
                     bmp390_interface_debug_print("bmp390: fifo %d/%d.\n", i + 1, frame_len);
-                    bmp390_interface_debug_print("bmp390: unknow type.\n");
+                    bmp390_interface_debug_print("bmp390: unknown type.\n");
                 }
             }
             gs_fifo_full_flag = 1;
@@ -257,7 +257,7 @@ uint8_t bmp390(uint8_t argc, char **argv)
         {"times", required_argument, NULL, 3},
         {NULL, 0, NULL, 0},
     };
-    char type[33] = "unknow";
+    char type[33] = "unknown";
     uint32_t times = 3;
     bmp390_address_t addr = BMP390_ADDRESS_ADO_LOW;
     bmp390_interface_t interface = BMP390_INTERFACE_IIC;
@@ -789,7 +789,7 @@ int main(void)
     /* uart init */
     uart_init(115200);
     
-    /* shell init && register bmp390 fuction */
+    /* shell init && register bmp390 function */
     shell_init();
     shell_register("bmp390", bmp390);
     uart_print("bmp390: welcome to libdriver bmp390.\n");
@@ -812,7 +812,7 @@ int main(void)
             }
             else if (res == 2)
             {
-                uart_print("bmp390: unknow command.\n");
+                uart_print("bmp390: unknown command.\n");
             }
             else if (res == 3)
             {
@@ -828,7 +828,7 @@ int main(void)
             }
             else
             {
-                uart_print("bmp390: unknow status code.\n");
+                uart_print("bmp390: unknown status code.\n");
             }
             uart_flush();
         }

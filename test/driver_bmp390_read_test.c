@@ -178,11 +178,11 @@ uint8_t bmp390_read_test(bmp390_interface_t interface, bmp390_address_t addr_pin
         return 1;
     }
     
-    /* enable fifo sensortime on */
+    /* enable fifo sensor time on */
     res = bmp390_set_fifo_sensortime_on(&gs_handle, BMP390_BOOL_TRUE);
     if (res != 0)
     {
-        bmp390_interface_debug_print("bmp390: set fifo sensortime on failed.\n");
+        bmp390_interface_debug_print("bmp390: set fifo sensor time on failed.\n");
         (void)bmp390_deinit(&gs_handle);
         
         return 1;
@@ -192,7 +192,7 @@ uint8_t bmp390_read_test(bmp390_interface_t interface, bmp390_address_t addr_pin
     res = bmp390_set_fifo_pressure_on(&gs_handle, BMP390_BOOL_TRUE);
     if (res != 0)
     {
-        bmp390_interface_debug_print("bmp390: set fifo sensortime on failed.\n");
+        bmp390_interface_debug_print("bmp390: set fifo sensor time on failed.\n");
         (void)bmp390_deinit(&gs_handle);
         
         return 1;

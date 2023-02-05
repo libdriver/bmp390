@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga6295a83be12c1627eef6c1bf88d6ac3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the status  <a href="group__bmp390__base__driver.html#ga6295a83be12c1627eef6c1bf88d6ac3d">More...</a><br /></td></tr>
 <tr class="separator:ga6295a83be12c1627eef6c1bf88d6ac3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad864a4113fe9e972147af0ef3e6f3745"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bmp390__base__driver.html#gad864a4113fe9e972147af0ef3e6f3745">bmp390_get_sensortime</a> (<a class="el" href="group__bmp390__driver.html#gafb5bd91974bec5e97debdfff5e9e68ab">bmp390_handle_t</a> *handle, uint32_t *t)</td></tr>
-<tr class="memdesc:gad864a4113fe9e972147af0ef3e6f3745"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the sensortime  <a href="group__bmp390__base__driver.html#gad864a4113fe9e972147af0ef3e6f3745">More...</a><br /></td></tr>
+<tr class="memdesc:gad864a4113fe9e972147af0ef3e6f3745"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the sensor time  <a href="group__bmp390__base__driver.html#gad864a4113fe9e972147af0ef3e6f3745">More...</a><br /></td></tr>
 <tr class="separator:gad864a4113fe9e972147af0ef3e6f3745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gace2ae347239a27673b20f02d645b9160"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bmp390__base__driver.html#gace2ae347239a27673b20f02d645b9160">bmp390_get_event</a> (<a class="el" href="group__bmp390__driver.html#gafb5bd91974bec5e97debdfff5e9e68ab">bmp390_handle_t</a> *handle, <a class="el" href="group__bmp390__driver.html#ga2a90d9c4bb738e28d150cf40402a3ee9">bmp390_event_t</a> *event)</td></tr>
 <tr class="memdesc:gace2ae347239a27673b20f02d645b9160"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the event  <a href="group__bmp390__base__driver.html#gace2ae347239a27673b20f02d645b9160">More...</a><br /></td></tr>
@@ -163,7 +163,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga83a6c76897811e4d6fb8d7507ae8de40"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the iic watchdog period  <a href="group__bmp390__base__driver.html#ga83a6c76897811e4d6fb8d7507ae8de40">More...</a><br /></td></tr>
 <tr class="separator:ga83a6c76897811e4d6fb8d7507ae8de40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga184807c2dd608782731cf8343ce54779"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bmp390__base__driver.html#ga184807c2dd608782731cf8343ce54779">bmp390_set_pressure</a> (<a class="el" href="group__bmp390__driver.html#gafb5bd91974bec5e97debdfff5e9e68ab">bmp390_handle_t</a> *handle, <a class="el" href="group__bmp390__driver.html#ga8fbc7b2b6c8c18d945ee066090e32f60">bmp390_bool_t</a> enable)</td></tr>
-<tr class="memdesc:ga184807c2dd608782731cf8343ce54779"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable or disable the pressrue  <a href="group__bmp390__base__driver.html#ga184807c2dd608782731cf8343ce54779">More...</a><br /></td></tr>
+<tr class="memdesc:ga184807c2dd608782731cf8343ce54779"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable or disable the pressure  <a href="group__bmp390__base__driver.html#ga184807c2dd608782731cf8343ce54779">More...</a><br /></td></tr>
 <tr class="separator:ga184807c2dd608782731cf8343ce54779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga12b87374b188c9959bdaebe2d89bd66f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bmp390__base__driver.html#ga12b87374b188c9959bdaebe2d89bd66f">bmp390_get_pressure</a> (<a class="el" href="group__bmp390__driver.html#gafb5bd91974bec5e97debdfff5e9e68ab">bmp390_handle_t</a> *handle, <a class="el" href="group__bmp390__driver.html#ga8fbc7b2b6c8c18d945ee066090e32f60">bmp390_bool_t</a> *enable)</td></tr>
 <tr class="memdesc:ga12b87374b188c9959bdaebe2d89bd66f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the pressure status  <a href="group__bmp390__base__driver.html#ga12b87374b188c9959bdaebe2d89bd66f">More...</a><br /></td></tr>
@@ -834,17 +834,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>get the sensortime </p>
+<p>get the sensor time </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*t</td><td>points to a timerstamp buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*t</td><td>points to a timestamp buffer </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code<ul>
 <li>0 success</li>
-<li>1 get sensortime failed</li>
+<li>1 get sensor time failed</li>
 <li>2 handle is NULL</li>
 <li>3 handle is not initialized </li>
 </ul>
@@ -1679,7 +1679,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>enable or disable the pressrue </p>
+<p>enable or disable the pressure </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
