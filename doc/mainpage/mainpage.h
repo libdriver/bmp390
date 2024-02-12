@@ -1,6 +1,6 @@
 /**
  * @mainpage  LibDriver BMP390
- * @brief     libdriver bmp390 is a full function driver of bmp390 and it can run in both MCU and Linux platform.
+ * @brief     LibDriver BMP390 is a full function driver of BMP390 and it can run in both MCU and Linux platform.
  * @version   1.0.0
  * @author    Shifeng Li
  *
