@@ -174,8 +174,8 @@ uint8_t bmp390_interrupt_init(bmp390_interface_t interface, bmp390_address_t add
         return 1;
     }
     
-    /* enable latch interrupt pin and interrupt status */
-    res = bmp390_set_latch_interrupt_pin_and_interrupt_status(&gs_handle, BMP390_BOOL_TRUE);
+    /* disable latch interrupt pin and interrupt status */
+    res = bmp390_set_latch_interrupt_pin_and_interrupt_status(&gs_handle, BMP390_BOOL_FALSE);
     if (res != 0)
     {
         bmp390_interface_debug_print("bmp390: set latch interrupt pin and interrupt status failed.\n");
