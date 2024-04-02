@@ -3803,6 +3803,24 @@ uint8_t bmp390_fifo_parse(bmp390_handle_t *handle, uint8_t *buf, uint16_t buf_le
                 
                 break;                                                                                                                    /* break */
             }
+            case 0x80 :                                                                                                                   /* fifo empty */
+            {
+                i += 2;                                                                                                                   /* index+2 */
+                
+                break;                                                                                                                    /* break */
+            }
+            case 0x48 :                                                                                                                   /* fifo input config */
+            {
+                i += 2;                                                                                                                   /* index+2 */
+                
+                break;                                                                                                                    /* break */
+            }
+            case 0x44 :                                                                                                                   /* config error */
+            {
+                i += 2;                                                                                                                   /* index+2 */
+                
+                break;                                                                                                                    /* break */
+            }
             default :
             {
                 handle->debug_print("bmp390: header is invalid.\n");                                                                      /* header is invalid */
