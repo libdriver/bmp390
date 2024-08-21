@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;       </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">return</span> 1;                                                                        <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    handle-&gt;<a class="code" href="structbmp390__handle__s.html#acc5ce172913ccabaada04d5c408dd85b">t1</a> = (uint16_t)buf[1] &lt;&lt;8 | buf[0];                                          <span class="comment">/* set t1 */</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    handle-&gt;<a class="code" href="structbmp390__handle__s.html#acc5ce172913ccabaada04d5c408dd85b">t1</a> = (uint16_t)buf[1] &lt;&lt; 8 | buf[0];                                         <span class="comment">/* set t1 */</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">if</span> (a_bmp390_iic_spi_read(handle, <a class="code" href="driver__bmp390_8c.html#a96c8b57af25ee1aa2fa8271ddabe4d75">BMP390_REG_NVM_PAR_T2_L</a>, (uint8_t *)buf, 2) != 0)  <span class="comment">/* read t2 */</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    {</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        handle-&gt;<a class="code" href="structbmp390__handle__s.html#a769d5b3a6c14790a0e126e8fe70b384b">debug_print</a>(<span class="stringliteral">&quot;bmp390: get calibration data failed.\n&quot;</span>);                   <span class="comment">/* get calibration data failed */</span></div>
@@ -2330,7 +2330,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03009"></a><span class="lineno"> 3009</span>&#160;               </div>
 <div class="line"><a name="l03010"></a><span class="lineno"> 3010</span>&#160;                <span class="keywordflow">return</span> 1;                                                                     <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03011"></a><span class="lineno"> 3011</span>&#160;            }</div>
-<div class="line"><a name="l03012"></a><span class="lineno"> 3012</span>&#160;            *raw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];                    <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03012"></a><span class="lineno"> 3012</span>&#160;            *raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];                   <span class="comment">/* get data */</span></div>
 <div class="line"><a name="l03013"></a><span class="lineno"> 3013</span>&#160;            output = a_bmp390_compensate_temperature(handle, *raw);                           <span class="comment">/* compensate temperature */</span></div>
 <div class="line"><a name="l03014"></a><span class="lineno"> 3014</span>&#160;            *c = (float)((<span class="keywordtype">double</span>)output / 100.0);                                             <span class="comment">/* get converted temperature */</span></div>
 <div class="line"><a name="l03015"></a><span class="lineno"> 3015</span>&#160;            </div>
@@ -2385,7 +2385,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03064"></a><span class="lineno"> 3064</span>&#160;                   </div>
 <div class="line"><a name="l03065"></a><span class="lineno"> 3065</span>&#160;                    <span class="keywordflow">return</span> 1;                                                                 <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03066"></a><span class="lineno"> 3066</span>&#160;                }</div>
-<div class="line"><a name="l03067"></a><span class="lineno"> 3067</span>&#160;                *raw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];                <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03067"></a><span class="lineno"> 3067</span>&#160;                *raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];               <span class="comment">/* get data */</span></div>
 <div class="line"><a name="l03068"></a><span class="lineno"> 3068</span>&#160;                output = a_bmp390_compensate_temperature(handle, *raw);                       <span class="comment">/* compensate temperature */</span></div>
 <div class="line"><a name="l03069"></a><span class="lineno"> 3069</span>&#160;                *c = (float)((<span class="keywordtype">double</span>)output / 100.0);                                         <span class="comment">/* get converted temperature */</span></div>
 <div class="line"><a name="l03070"></a><span class="lineno"> 3070</span>&#160;                </div>
@@ -2420,7 +2420,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03111"></a><span class="lineno"> 3111</span>&#160;    uint8_t res;</div>
 <div class="line"><a name="l03112"></a><span class="lineno"> 3112</span>&#160;    uint8_t prev;</div>
 <div class="line"><a name="l03113"></a><span class="lineno"> 3113</span>&#160;    uint8_t buf[3];</div>
-<div class="line"><a name="l03114"></a><span class="lineno"> 3114</span>&#160;    uint32_t temperature_yaw;</div>
+<div class="line"><a name="l03114"></a><span class="lineno"> 3114</span>&#160;    uint32_t temperature_raw;</div>
 <div class="line"><a name="l03115"></a><span class="lineno"> 3115</span>&#160;    </div>
 <div class="line"><a name="l03116"></a><span class="lineno"> 3116</span>&#160;    <span class="keywordflow">if</span> (handle == NULL)                                                                       <span class="comment">/* check handle */</span></div>
 <div class="line"><a name="l03117"></a><span class="lineno"> 3117</span>&#160;    {</div>
@@ -2469,8 +2469,8 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03160"></a><span class="lineno"> 3160</span>&#160;               </div>
 <div class="line"><a name="l03161"></a><span class="lineno"> 3161</span>&#160;                <span class="keywordflow">return</span> 1;                                                                     <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03162"></a><span class="lineno"> 3162</span>&#160;            }</div>
-<div class="line"><a name="l03163"></a><span class="lineno"> 3163</span>&#160;            temperature_yaw= (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];          <span class="comment">/* get data */</span></div>
-<div class="line"><a name="l03164"></a><span class="lineno"> 3164</span>&#160;            (void)a_bmp390_compensate_temperature(handle, temperature_yaw);                   <span class="comment">/* compensate temperature */</span></div>
+<div class="line"><a name="l03163"></a><span class="lineno"> 3163</span>&#160;            temperature_raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];        <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03164"></a><span class="lineno"> 3164</span>&#160;            (void)a_bmp390_compensate_temperature(handle, temperature_raw);                   <span class="comment">/* compensate temperature */</span></div>
 <div class="line"><a name="l03165"></a><span class="lineno"> 3165</span>&#160;        }</div>
 <div class="line"><a name="l03166"></a><span class="lineno"> 3166</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l03167"></a><span class="lineno"> 3167</span>&#160;        {</div>
@@ -2489,7 +2489,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03180"></a><span class="lineno"> 3180</span>&#160;               </div>
 <div class="line"><a name="l03181"></a><span class="lineno"> 3181</span>&#160;                <span class="keywordflow">return</span> 1;                                                                     <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03182"></a><span class="lineno"> 3182</span>&#160;            }</div>
-<div class="line"><a name="l03183"></a><span class="lineno"> 3183</span>&#160;            *raw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];                    <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03183"></a><span class="lineno"> 3183</span>&#160;            *raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];                   <span class="comment">/* get data */</span></div>
 <div class="line"><a name="l03184"></a><span class="lineno"> 3184</span>&#160;            output = a_bmp390_compensate_pressure(handle, *raw);                              <span class="comment">/* compensate pressure */</span></div>
 <div class="line"><a name="l03185"></a><span class="lineno"> 3185</span>&#160;            *pa = (float)((<span class="keywordtype">double</span>)output / 100.0);                                            <span class="comment">/* get converted pressure */</span></div>
 <div class="line"><a name="l03186"></a><span class="lineno"> 3186</span>&#160;            </div>
@@ -2541,8 +2541,8 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03232"></a><span class="lineno"> 3232</span>&#160;                   </div>
 <div class="line"><a name="l03233"></a><span class="lineno"> 3233</span>&#160;                    <span class="keywordflow">return</span> 1;                                                                 <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03234"></a><span class="lineno"> 3234</span>&#160;                }</div>
-<div class="line"><a name="l03235"></a><span class="lineno"> 3235</span>&#160;                temperature_yaw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];     <span class="comment">/* get data */</span></div>
-<div class="line"><a name="l03236"></a><span class="lineno"> 3236</span>&#160;                (void)a_bmp390_compensate_temperature(handle, temperature_yaw);               <span class="comment">/* compensate temperature */</span></div>
+<div class="line"><a name="l03235"></a><span class="lineno"> 3235</span>&#160;                temperature_raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];    <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03236"></a><span class="lineno"> 3236</span>&#160;                (void)a_bmp390_compensate_temperature(handle, temperature_raw);               <span class="comment">/* compensate temperature */</span></div>
 <div class="line"><a name="l03237"></a><span class="lineno"> 3237</span>&#160;                </div>
 <div class="line"><a name="l03238"></a><span class="lineno"> 3238</span>&#160;                <span class="keywordflow">goto</span> press;                                                                   <span class="comment">/* goto press */</span></div>
 <div class="line"><a name="l03239"></a><span class="lineno"> 3239</span>&#160;            }</div>
@@ -2574,7 +2574,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03265"></a><span class="lineno"> 3265</span>&#160;                   </div>
 <div class="line"><a name="l03266"></a><span class="lineno"> 3266</span>&#160;                    <span class="keywordflow">return</span> 1;                                                                 <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03267"></a><span class="lineno"> 3267</span>&#160;                }</div>
-<div class="line"><a name="l03268"></a><span class="lineno"> 3268</span>&#160;                *raw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];                <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03268"></a><span class="lineno"> 3268</span>&#160;                *raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];               <span class="comment">/* get data */</span></div>
 <div class="line"><a name="l03269"></a><span class="lineno"> 3269</span>&#160;                output = a_bmp390_compensate_pressure(handle, *raw);                          <span class="comment">/* compensate pressure */</span></div>
 <div class="line"><a name="l03270"></a><span class="lineno"> 3270</span>&#160;                *pa = (float)((<span class="keywordtype">double</span>)output / 100.0);                                        <span class="comment">/* get converted pressure */</span></div>
 <div class="line"><a name="l03271"></a><span class="lineno"> 3271</span>&#160;                </div>
@@ -2659,7 +2659,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03364"></a><span class="lineno"> 3364</span>&#160;               </div>
 <div class="line"><a name="l03365"></a><span class="lineno"> 3365</span>&#160;                <span class="keywordflow">return</span> 1;                                                                     <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03366"></a><span class="lineno"> 3366</span>&#160;            }</div>
-<div class="line"><a name="l03367"></a><span class="lineno"> 3367</span>&#160;            *temperature_raw= (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];         <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03367"></a><span class="lineno"> 3367</span>&#160;            *temperature_raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];       <span class="comment">/* get data */</span></div>
 <div class="line"><a name="l03368"></a><span class="lineno"> 3368</span>&#160;            output = a_bmp390_compensate_temperature(handle, *temperature_raw);               <span class="comment">/* compensate temperature */</span></div>
 <div class="line"><a name="l03369"></a><span class="lineno"> 3369</span>&#160;            *temperature_c = (float)((<span class="keywordtype">double</span>)output / 100.0);                                 <span class="comment">/* get converted temperature */</span></div>
 <div class="line"><a name="l03370"></a><span class="lineno"> 3370</span>&#160;        }</div>
@@ -2680,7 +2680,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03385"></a><span class="lineno"> 3385</span>&#160;               </div>
 <div class="line"><a name="l03386"></a><span class="lineno"> 3386</span>&#160;                <span class="keywordflow">return</span> 1;                                                                     <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03387"></a><span class="lineno"> 3387</span>&#160;            }</div>
-<div class="line"><a name="l03388"></a><span class="lineno"> 3388</span>&#160;            *pressure_raw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];           <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03388"></a><span class="lineno"> 3388</span>&#160;            *pressure_raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];          <span class="comment">/* get data */</span></div>
 <div class="line"><a name="l03389"></a><span class="lineno"> 3389</span>&#160;            output = a_bmp390_compensate_pressure(handle, *pressure_raw);                     <span class="comment">/* compensate pressure */</span></div>
 <div class="line"><a name="l03390"></a><span class="lineno"> 3390</span>&#160;            *pressure_pa = (float)((<span class="keywordtype">double</span>)output / 100.0);                                   <span class="comment">/* get converted pressure */</span></div>
 <div class="line"><a name="l03391"></a><span class="lineno"> 3391</span>&#160;            </div>
@@ -2734,7 +2734,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03439"></a><span class="lineno"> 3439</span>&#160;                   </div>
 <div class="line"><a name="l03440"></a><span class="lineno"> 3440</span>&#160;                    <span class="keywordflow">return</span> 1;                                                                 <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03441"></a><span class="lineno"> 3441</span>&#160;                }</div>
-<div class="line"><a name="l03442"></a><span class="lineno"> 3442</span>&#160;                *temperature_raw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];    <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03442"></a><span class="lineno"> 3442</span>&#160;                *temperature_raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];   <span class="comment">/* get data */</span></div>
 <div class="line"><a name="l03443"></a><span class="lineno"> 3443</span>&#160;                output = a_bmp390_compensate_temperature(handle, *temperature_raw);           <span class="comment">/* compensate temperature */</span></div>
 <div class="line"><a name="l03444"></a><span class="lineno"> 3444</span>&#160;                *temperature_c = (float)((<span class="keywordtype">double</span>)output / 100.0);                             <span class="comment">/* get converted temperature */</span></div>
 <div class="line"><a name="l03445"></a><span class="lineno"> 3445</span>&#160;                </div>
@@ -2769,7 +2769,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03474"></a><span class="lineno"> 3474</span>&#160;                   </div>
 <div class="line"><a name="l03475"></a><span class="lineno"> 3475</span>&#160;                    <span class="keywordflow">return</span> 1;                                                                 <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03476"></a><span class="lineno"> 3476</span>&#160;                }</div>
-<div class="line"><a name="l03477"></a><span class="lineno"> 3477</span>&#160;                *pressure_raw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];       <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03477"></a><span class="lineno"> 3477</span>&#160;                *pressure_raw = (uint32_t)buf[2] &lt;&lt; 16 | (uint32_t)buf[1] &lt;&lt; 8 | buf[0];      <span class="comment">/* get data */</span></div>
 <div class="line"><a name="l03478"></a><span class="lineno"> 3478</span>&#160;                output = a_bmp390_compensate_pressure(handle, *pressure_raw);                 <span class="comment">/* compensate pressure */</span></div>
 <div class="line"><a name="l03479"></a><span class="lineno"> 3479</span>&#160;                *pressure_pa = (float)((<span class="keywordtype">double</span>)output / 100.0);                               <span class="comment">/* get converted pressure */</span></div>
 <div class="line"><a name="l03480"></a><span class="lineno"> 3480</span>&#160;                </div>
@@ -2997,7 +2997,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03774"></a><span class="lineno"> 3774</span>&#160;                    <span class="keywordflow">return</span> 0;                                                                                                             <span class="comment">/* return success */</span></div>
 <div class="line"><a name="l03775"></a><span class="lineno"> 3775</span>&#160;                }</div>
 <div class="line"><a name="l03776"></a><span class="lineno"> 3776</span>&#160;                frame[frame_total].<a class="code" href="structbmp390__frame__s.html#aae81651cd02ad5eb7aeb8ab22120b598">type</a> =  <a class="code" href="group__bmp390__base__driver.html#gga80e2993052308fd8257fa6a38e38852da072428cef2dbdb37a1a7a66d61c6d811">BMP390_FRAME_TYPE_TEMPERATURE</a>;                                                                 <span class="comment">/* set temperature type */</span></div>
-<div class="line"><a name="l03777"></a><span class="lineno"> 3777</span>&#160;                frame[frame_total].<a class="code" href="structbmp390__frame__s.html#a0a595268561edc58e347ca8387000bc6">raw</a> = (uint32_t)buf[i + 2 + 1] &lt;&lt; 16| (uint32_t)buf[i + 1 + 1] &lt;&lt; 8 | buf[i + 0 + 1];                  <span class="comment">/* set raw */</span></div>
+<div class="line"><a name="l03777"></a><span class="lineno"> 3777</span>&#160;                frame[frame_total].<a class="code" href="structbmp390__frame__s.html#a0a595268561edc58e347ca8387000bc6">raw</a> = (uint32_t)buf[i + 2 + 1] &lt;&lt; 16 | (uint32_t)buf[i + 1 + 1] &lt;&lt; 8 | buf[i + 0 + 1];                 <span class="comment">/* set raw */</span></div>
 <div class="line"><a name="l03778"></a><span class="lineno"> 3778</span>&#160;                frame[frame_total].<a class="code" href="structbmp390__frame__s.html#a173b91873a3fc4f50a95416a6204d963">data</a> = (float)((<span class="keywordtype">double</span>)a_bmp390_compensate_temperature(handle, frame[frame_total].raw) / 100.0);       <span class="comment">/* set compensate temperature */</span></div>
 <div class="line"><a name="l03779"></a><span class="lineno"> 3779</span>&#160;                frame_total++;                                                                                                            <span class="comment">/* frame++ */</span></div>
 <div class="line"><a name="l03780"></a><span class="lineno"> 3780</span>&#160;                <span class="keywordflow">if</span> (frame_total &gt; ((*frame_len)-1))                                                                                       <span class="comment">/* check length */</span></div>
@@ -3005,7 +3005,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03782"></a><span class="lineno"> 3782</span>&#160;                    <span class="keywordflow">return</span> 0;                                                                                                             <span class="comment">/* return success */</span></div>
 <div class="line"><a name="l03783"></a><span class="lineno"> 3783</span>&#160;                }</div>
 <div class="line"><a name="l03784"></a><span class="lineno"> 3784</span>&#160;                frame[frame_total].<a class="code" href="structbmp390__frame__s.html#aae81651cd02ad5eb7aeb8ab22120b598">type</a> =  <a class="code" href="group__bmp390__base__driver.html#gga80e2993052308fd8257fa6a38e38852da21ff71f3ac55847cdbd6a1a57b3c7525">BMP390_FRAME_TYPE_PRESSURE</a>;                                                                    <span class="comment">/* set pressure type */</span></div>
-<div class="line"><a name="l03785"></a><span class="lineno"> 3785</span>&#160;                frame[frame_total].<a class="code" href="structbmp390__frame__s.html#a0a595268561edc58e347ca8387000bc6">raw</a> = (uint32_t)buf[i + 5 + 1] &lt;&lt; 16| (uint32_t)buf[i + 4 + 1] &lt;&lt; 8 | buf[i + 3 + 1];                  <span class="comment">/* set raw */</span></div>
+<div class="line"><a name="l03785"></a><span class="lineno"> 3785</span>&#160;                frame[frame_total].<a class="code" href="structbmp390__frame__s.html#a0a595268561edc58e347ca8387000bc6">raw</a> = (uint32_t)buf[i + 5 + 1] &lt;&lt; 16 | (uint32_t)buf[i + 4 + 1] &lt;&lt; 8 | buf[i + 3 + 1];                 <span class="comment">/* set raw */</span></div>
 <div class="line"><a name="l03786"></a><span class="lineno"> 3786</span>&#160;                frame[frame_total].<a class="code" href="structbmp390__frame__s.html#a173b91873a3fc4f50a95416a6204d963">data</a> = (float)((<span class="keywordtype">double</span>)a_bmp390_compensate_pressure(handle, frame[frame_total].raw) / 100.0);          <span class="comment">/* set compensate pressure */</span></div>
 <div class="line"><a name="l03787"></a><span class="lineno"> 3787</span>&#160;                frame_total++;                                                                                                            <span class="comment">/* frame++ */</span></div>
 <div class="line"><a name="l03788"></a><span class="lineno"> 3788</span>&#160;                i += 7;                                                                                                                   <span class="comment">/* index + 7 */</span></div>

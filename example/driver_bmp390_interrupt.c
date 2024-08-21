@@ -298,12 +298,12 @@ uint8_t bmp390_interrupt_init(bmp390_interface_t interface, bmp390_address_t add
  */
 uint8_t bmp390_interrupt_read(float *temperature_c, float *pressure_pa)
 {
-    uint32_t temperature_yaw;
-    uint32_t pressure_yaw;
+    uint32_t temperature_raw;
+    uint32_t pressure_raw;
     
     /* read temperature and pressure */
-    if (bmp390_read_temperature_pressure(&gs_handle, (uint32_t *)&temperature_yaw, temperature_c,
-                                        (uint32_t *)&pressure_yaw, pressure_pa) != 0)
+    if (bmp390_read_temperature_pressure(&gs_handle, (uint32_t *)&temperature_raw, temperature_c,
+                                        (uint32_t *)&pressure_raw, pressure_pa) != 0)
     {
         return 1;
     }
