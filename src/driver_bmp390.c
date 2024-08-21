@@ -202,7 +202,7 @@ static uint8_t a_bmp390_get_calibration_data(bmp390_handle_t *handle)
        
         return 1;                                                                        /* return error */
     }
-    handle->t1 = (uint16_t)buf[1] <<8 | buf[0];                                          /* set t1 */
+    handle->t1 = (uint16_t)buf[1] << 8 | buf[0];                                         /* set t1 */
     if (a_bmp390_iic_spi_read(handle, BMP390_REG_NVM_PAR_T2_L, (uint8_t *)buf, 2) != 0)  /* read t2 */
     {
         handle->debug_print("bmp390: get calibration data failed.\n");                   /* get calibration data failed */
@@ -3009,7 +3009,7 @@ uint8_t bmp390_read_temperature(bmp390_handle_t *handle, uint32_t *raw, float *c
                
                 return 1;                                                                     /* return error */
             }
-            *raw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];                    /* get data */
+            *raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];                   /* get data */
             output = a_bmp390_compensate_temperature(handle, *raw);                           /* compensate temperature */
             *c = (float)((double)output / 100.0);                                             /* get converted temperature */
             
@@ -3064,7 +3064,7 @@ uint8_t bmp390_read_temperature(bmp390_handle_t *handle, uint32_t *raw, float *c
                    
                     return 1;                                                                 /* return error */
                 }
-                *raw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];                /* get data */
+                *raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];               /* get data */
                 output = a_bmp390_compensate_temperature(handle, *raw);                       /* compensate temperature */
                 *c = (float)((double)output / 100.0);                                         /* get converted temperature */
                 
@@ -3160,7 +3160,7 @@ uint8_t bmp390_read_pressure(bmp390_handle_t *handle, uint32_t *raw, float *pa)
                
                 return 1;                                                                     /* return error */
             }
-            temperature_raw= (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];          /* get data */
+            temperature_raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];        /* get data */
             (void)a_bmp390_compensate_temperature(handle, temperature_raw);                   /* compensate temperature */
         }
         else
@@ -3180,7 +3180,7 @@ uint8_t bmp390_read_pressure(bmp390_handle_t *handle, uint32_t *raw, float *pa)
                
                 return 1;                                                                     /* return error */
             }
-            *raw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];                    /* get data */
+            *raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];                   /* get data */
             output = a_bmp390_compensate_pressure(handle, *raw);                              /* compensate pressure */
             *pa = (float)((double)output / 100.0);                                            /* get converted pressure */
             
@@ -3232,7 +3232,7 @@ uint8_t bmp390_read_pressure(bmp390_handle_t *handle, uint32_t *raw, float *pa)
                    
                     return 1;                                                                 /* return error */
                 }
-                temperature_raw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];     /* get data */
+                temperature_raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];    /* get data */
                 (void)a_bmp390_compensate_temperature(handle, temperature_raw);               /* compensate temperature */
                 
                 goto press;                                                                   /* goto press */
@@ -3265,7 +3265,7 @@ uint8_t bmp390_read_pressure(bmp390_handle_t *handle, uint32_t *raw, float *pa)
                    
                     return 1;                                                                 /* return error */
                 }
-                *raw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];                /* get data */
+                *raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];               /* get data */
                 output = a_bmp390_compensate_pressure(handle, *raw);                          /* compensate pressure */
                 *pa = (float)((double)output / 100.0);                                        /* get converted pressure */
                 
@@ -3364,7 +3364,7 @@ uint8_t bmp390_read_temperature_pressure(bmp390_handle_t *handle, uint32_t *temp
                
                 return 1;                                                                     /* return error */
             }
-            *temperature_raw= (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];         /* get data */
+            *temperature_raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];       /* get data */
             output = a_bmp390_compensate_temperature(handle, *temperature_raw);               /* compensate temperature */
             *temperature_c = (float)((double)output / 100.0);                                 /* get converted temperature */
         }
@@ -3385,7 +3385,7 @@ uint8_t bmp390_read_temperature_pressure(bmp390_handle_t *handle, uint32_t *temp
                
                 return 1;                                                                     /* return error */
             }
-            *pressure_raw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];           /* get data */
+            *pressure_raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];          /* get data */
             output = a_bmp390_compensate_pressure(handle, *pressure_raw);                     /* compensate pressure */
             *pressure_pa = (float)((double)output / 100.0);                                   /* get converted pressure */
             
@@ -3439,7 +3439,7 @@ uint8_t bmp390_read_temperature_pressure(bmp390_handle_t *handle, uint32_t *temp
                    
                     return 1;                                                                 /* return error */
                 }
-                *temperature_raw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];    /* get data */
+                *temperature_raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];   /* get data */
                 output = a_bmp390_compensate_temperature(handle, *temperature_raw);           /* compensate temperature */
                 *temperature_c = (float)((double)output / 100.0);                             /* get converted temperature */
                 
@@ -3474,7 +3474,7 @@ uint8_t bmp390_read_temperature_pressure(bmp390_handle_t *handle, uint32_t *temp
                    
                     return 1;                                                                 /* return error */
                 }
-                *pressure_raw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];       /* get data */
+                *pressure_raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];      /* get data */
                 output = a_bmp390_compensate_pressure(handle, *pressure_raw);                 /* compensate pressure */
                 *pressure_pa = (float)((double)output / 100.0);                               /* get converted pressure */
                 
@@ -3774,7 +3774,7 @@ uint8_t bmp390_fifo_parse(bmp390_handle_t *handle, uint8_t *buf, uint16_t buf_le
                     return 0;                                                                                                             /* return success */
                 }
                 frame[frame_total].type =  BMP390_FRAME_TYPE_TEMPERATURE;                                                                 /* set temperature type */
-                frame[frame_total].raw = (uint32_t)buf[i + 2 + 1] << 16| (uint32_t)buf[i + 1 + 1] << 8 | buf[i + 0 + 1];                  /* set raw */
+                frame[frame_total].raw = (uint32_t)buf[i + 2 + 1] << 16 | (uint32_t)buf[i + 1 + 1] << 8 | buf[i + 0 + 1];                 /* set raw */
                 frame[frame_total].data = (float)((double)a_bmp390_compensate_temperature(handle, frame[frame_total].raw) / 100.0);       /* set compensate temperature */
                 frame_total++;                                                                                                            /* frame++ */
                 if (frame_total > ((*frame_len)-1))                                                                                       /* check length */
@@ -3782,7 +3782,7 @@ uint8_t bmp390_fifo_parse(bmp390_handle_t *handle, uint8_t *buf, uint16_t buf_le
                     return 0;                                                                                                             /* return success */
                 }
                 frame[frame_total].type =  BMP390_FRAME_TYPE_PRESSURE;                                                                    /* set pressure type */
-                frame[frame_total].raw = (uint32_t)buf[i + 5 + 1] << 16| (uint32_t)buf[i + 4 + 1] << 8 | buf[i + 3 + 1];                  /* set raw */
+                frame[frame_total].raw = (uint32_t)buf[i + 5 + 1] << 16 | (uint32_t)buf[i + 4 + 1] << 8 | buf[i + 3 + 1];                 /* set raw */
                 frame[frame_total].data = (float)((double)a_bmp390_compensate_pressure(handle, frame[frame_total].raw) / 100.0);          /* set compensate pressure */
                 frame_total++;                                                                                                            /* frame++ */
                 i += 7;                                                                                                                   /* index + 7 */
