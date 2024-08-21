@@ -80,12 +80,12 @@ static void a_bmp390_interface_test_receive_callback(uint8_t type)
         }
         case BMP390_INTERRUPT_STATUS_DATA_READY :
         {
-            uint32_t temperature_yaw;
-            uint32_t pressure_yaw;
+            uint32_t temperature_raw;
+            uint32_t pressure_raw;
             
             /* read temperature pressure */
-            if (bmp390_read_temperature_pressure(&gs_handle, (uint32_t *)&temperature_yaw, (float *)&gs_temperature_c,
-                                                (uint32_t *)&pressure_yaw, (float *)&gs_pressure_pa) != 0)
+            if (bmp390_read_temperature_pressure(&gs_handle, (uint32_t *)&temperature_raw, (float *)&gs_temperature_c,
+                                                (uint32_t *)&pressure_raw, (float *)&gs_pressure_pa) != 0)
             {
                 bmp390_interface_debug_print("bmp390: read temperature and pressure failed.\n");
            

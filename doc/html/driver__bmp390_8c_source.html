@@ -2420,7 +2420,7 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03111"></a><span class="lineno"> 3111</span>&#160;    uint8_t res;</div>
 <div class="line"><a name="l03112"></a><span class="lineno"> 3112</span>&#160;    uint8_t prev;</div>
 <div class="line"><a name="l03113"></a><span class="lineno"> 3113</span>&#160;    uint8_t buf[3];</div>
-<div class="line"><a name="l03114"></a><span class="lineno"> 3114</span>&#160;    uint32_t temperature_yaw;</div>
+<div class="line"><a name="l03114"></a><span class="lineno"> 3114</span>&#160;    uint32_t temperature_raw;</div>
 <div class="line"><a name="l03115"></a><span class="lineno"> 3115</span>&#160;    </div>
 <div class="line"><a name="l03116"></a><span class="lineno"> 3116</span>&#160;    <span class="keywordflow">if</span> (handle == NULL)                                                                       <span class="comment">/* check handle */</span></div>
 <div class="line"><a name="l03117"></a><span class="lineno"> 3117</span>&#160;    {</div>
@@ -2469,8 +2469,8 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03160"></a><span class="lineno"> 3160</span>&#160;               </div>
 <div class="line"><a name="l03161"></a><span class="lineno"> 3161</span>&#160;                <span class="keywordflow">return</span> 1;                                                                     <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03162"></a><span class="lineno"> 3162</span>&#160;            }</div>
-<div class="line"><a name="l03163"></a><span class="lineno"> 3163</span>&#160;            temperature_yaw= (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];          <span class="comment">/* get data */</span></div>
-<div class="line"><a name="l03164"></a><span class="lineno"> 3164</span>&#160;            (void)a_bmp390_compensate_temperature(handle, temperature_yaw);                   <span class="comment">/* compensate temperature */</span></div>
+<div class="line"><a name="l03163"></a><span class="lineno"> 3163</span>&#160;            temperature_raw= (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];          <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03164"></a><span class="lineno"> 3164</span>&#160;            (void)a_bmp390_compensate_temperature(handle, temperature_raw);                   <span class="comment">/* compensate temperature */</span></div>
 <div class="line"><a name="l03165"></a><span class="lineno"> 3165</span>&#160;        }</div>
 <div class="line"><a name="l03166"></a><span class="lineno"> 3166</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l03167"></a><span class="lineno"> 3167</span>&#160;        {</div>
@@ -2541,8 +2541,8 @@ $(document).ready(function(){initNavTree('driver__bmp390_8c_source.html',''); in
 <div class="line"><a name="l03232"></a><span class="lineno"> 3232</span>&#160;                   </div>
 <div class="line"><a name="l03233"></a><span class="lineno"> 3233</span>&#160;                    <span class="keywordflow">return</span> 1;                                                                 <span class="comment">/* return error */</span></div>
 <div class="line"><a name="l03234"></a><span class="lineno"> 3234</span>&#160;                }</div>
-<div class="line"><a name="l03235"></a><span class="lineno"> 3235</span>&#160;                temperature_yaw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];     <span class="comment">/* get data */</span></div>
-<div class="line"><a name="l03236"></a><span class="lineno"> 3236</span>&#160;                (void)a_bmp390_compensate_temperature(handle, temperature_yaw);               <span class="comment">/* compensate temperature */</span></div>
+<div class="line"><a name="l03235"></a><span class="lineno"> 3235</span>&#160;                temperature_raw = (uint32_t)buf[2] &lt;&lt; 16| (uint32_t)buf[1] &lt;&lt; 8 | buf[0];     <span class="comment">/* get data */</span></div>
+<div class="line"><a name="l03236"></a><span class="lineno"> 3236</span>&#160;                (void)a_bmp390_compensate_temperature(handle, temperature_raw);               <span class="comment">/* compensate temperature */</span></div>
 <div class="line"><a name="l03237"></a><span class="lineno"> 3237</span>&#160;                </div>
 <div class="line"><a name="l03238"></a><span class="lineno"> 3238</span>&#160;                <span class="keywordflow">goto</span> press;                                                                   <span class="comment">/* goto press */</span></div>
 <div class="line"><a name="l03239"></a><span class="lineno"> 3239</span>&#160;            }</div>

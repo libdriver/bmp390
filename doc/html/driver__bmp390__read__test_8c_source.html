@@ -407,14 +407,14 @@ $(document).ready(function(){initNavTree('driver__bmp390__read__test_8c_source.h
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <a class="code" href="group__bmp390__interface__driver.html#gad15acd2ae92f6b2a13e62c2ead8371b6">bmp390_interface_delay_ms</a>(1000);</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; times; i++)</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        uint32_t temperature_yaw;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        uint32_t pressure_yaw;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        uint32_t temperature_raw;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        uint32_t pressure_raw;</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordtype">float</span> temperature_c;</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordtype">float</span> pressure_pa;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        </div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="comment">/* read temperature pressure */</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__bmp390__base__driver.html#ga8c2282668bfad379247061eb5a1f4186">bmp390_read_temperature_pressure</a>(&amp;gs_handle, (uint32_t *)&amp;temperature_yaw, (<span class="keywordtype">float</span> *)&amp;temperature_c,</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                                            (uint32_t *)&amp;pressure_yaw, (<span class="keywordtype">float</span> *)&amp;pressure_pa) != 0)</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__bmp390__base__driver.html#ga8c2282668bfad379247061eb5a1f4186">bmp390_read_temperature_pressure</a>(&amp;gs_handle, (uint32_t *)&amp;temperature_raw, (<span class="keywordtype">float</span> *)&amp;temperature_c,</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                                            (uint32_t *)&amp;pressure_raw, (<span class="keywordtype">float</span> *)&amp;pressure_pa) != 0)</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        {</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <a class="code" href="group__bmp390__interface__driver.html#ga285886b933f3a6b3f4304911dadfe442">bmp390_interface_debug_print</a>(<span class="stringliteral">&quot;bmp390: read temperature and pressure failed.\n&quot;</span>);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            (void)<a class="code" href="group__bmp390__base__driver.html#gad0163bb34f04eb7d0888ebfa18534760">bmp390_deinit</a>(&amp;gs_handle);</div>
@@ -450,14 +450,14 @@ $(document).ready(function(){initNavTree('driver__bmp390__read__test_8c_source.h
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <a class="code" href="group__bmp390__interface__driver.html#gad15acd2ae92f6b2a13e62c2ead8371b6">bmp390_interface_delay_ms</a>(1000);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; times; i++)</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    {</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        uint32_t temperature_yaw;</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        uint32_t pressure_yaw;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        uint32_t temperature_raw;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        uint32_t pressure_raw;</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordtype">float</span> temperature_c;</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordtype">float</span> pressure_pa;</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        </div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="comment">/* read temperature pressure */</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__bmp390__base__driver.html#ga8c2282668bfad379247061eb5a1f4186">bmp390_read_temperature_pressure</a>(&amp;gs_handle, (uint32_t *)&amp;temperature_yaw, (<span class="keywordtype">float</span> *)&amp;temperature_c,</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                            (uint32_t *)&amp;pressure_yaw, (<span class="keywordtype">float</span> *)&amp;pressure_pa) != 0)</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__bmp390__base__driver.html#ga8c2282668bfad379247061eb5a1f4186">bmp390_read_temperature_pressure</a>(&amp;gs_handle, (uint32_t *)&amp;temperature_raw, (<span class="keywordtype">float</span> *)&amp;temperature_c,</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                            (uint32_t *)&amp;pressure_raw, (<span class="keywordtype">float</span> *)&amp;pressure_pa) != 0)</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        {</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            <a class="code" href="group__bmp390__interface__driver.html#ga285886b933f3a6b3f4304911dadfe442">bmp390_interface_debug_print</a>(<span class="stringliteral">&quot;bmp390: read temperature and pressure failed.\n&quot;</span>);</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            (void)<a class="code" href="group__bmp390__base__driver.html#gad0163bb34f04eb7d0888ebfa18534760">bmp390_deinit</a>(&amp;gs_handle);</div>

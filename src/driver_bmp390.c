@@ -3111,7 +3111,7 @@ uint8_t bmp390_read_pressure(bmp390_handle_t *handle, uint32_t *raw, float *pa)
     uint8_t res;
     uint8_t prev;
     uint8_t buf[3];
-    uint32_t temperature_yaw;
+    uint32_t temperature_raw;
     
     if (handle == NULL)                                                                       /* check handle */
     {
@@ -3160,8 +3160,8 @@ uint8_t bmp390_read_pressure(bmp390_handle_t *handle, uint32_t *raw, float *pa)
                
                 return 1;                                                                     /* return error */
             }
-            temperature_yaw= (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];          /* get data */
-            (void)a_bmp390_compensate_temperature(handle, temperature_yaw);                   /* compensate temperature */
+            temperature_raw= (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];          /* get data */
+            (void)a_bmp390_compensate_temperature(handle, temperature_raw);                   /* compensate temperature */
         }
         else
         {
@@ -3232,8 +3232,8 @@ uint8_t bmp390_read_pressure(bmp390_handle_t *handle, uint32_t *raw, float *pa)
                    
                     return 1;                                                                 /* return error */
                 }
-                temperature_yaw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];     /* get data */
-                (void)a_bmp390_compensate_temperature(handle, temperature_yaw);               /* compensate temperature */
+                temperature_raw = (uint32_t)buf[2] << 16| (uint32_t)buf[1] << 8 | buf[0];     /* get data */
+                (void)a_bmp390_compensate_temperature(handle, temperature_raw);               /* compensate temperature */
                 
                 goto press;                                                                   /* goto press */
             }

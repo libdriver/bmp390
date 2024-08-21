@@ -363,14 +363,14 @@ uint8_t bmp390_read_test(bmp390_interface_t interface, bmp390_address_t addr_pin
     bmp390_interface_delay_ms(1000);
     for (i = 0; i < times; i++)
     {
-        uint32_t temperature_yaw;
-        uint32_t pressure_yaw;
+        uint32_t temperature_raw;
+        uint32_t pressure_raw;
         float temperature_c;
         float pressure_pa;
         
         /* read temperature pressure */
-        if (bmp390_read_temperature_pressure(&gs_handle, (uint32_t *)&temperature_yaw, (float *)&temperature_c,
-                                            (uint32_t *)&pressure_yaw, (float *)&pressure_pa) != 0)
+        if (bmp390_read_temperature_pressure(&gs_handle, (uint32_t *)&temperature_raw, (float *)&temperature_c,
+                                            (uint32_t *)&pressure_raw, (float *)&pressure_pa) != 0)
         {
             bmp390_interface_debug_print("bmp390: read temperature and pressure failed.\n");
             (void)bmp390_deinit(&gs_handle);
@@ -406,14 +406,14 @@ uint8_t bmp390_read_test(bmp390_interface_t interface, bmp390_address_t addr_pin
     bmp390_interface_delay_ms(1000);
     for (i = 0; i < times; i++)
     {
-        uint32_t temperature_yaw;
-        uint32_t pressure_yaw;
+        uint32_t temperature_raw;
+        uint32_t pressure_raw;
         float temperature_c;
         float pressure_pa;
         
         /* read temperature pressure */
-        if (bmp390_read_temperature_pressure(&gs_handle, (uint32_t *)&temperature_yaw, (float *)&temperature_c,
-                                            (uint32_t *)&pressure_yaw, (float *)&pressure_pa) != 0)
+        if (bmp390_read_temperature_pressure(&gs_handle, (uint32_t *)&temperature_raw, (float *)&temperature_c,
+                                            (uint32_t *)&pressure_raw, (float *)&pressure_pa) != 0)
         {
             bmp390_interface_debug_print("bmp390: read temperature and pressure failed.\n");
             (void)bmp390_deinit(&gs_handle);
