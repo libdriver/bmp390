@@ -1,3 +1,9 @@
+## 1.0.4 (2024-10-17)
+
+## Bug Fixes
+
+- fix fifo test errors
+
 ## 1.0.3 (2024-08-21)
 
 ## Bug Fixes

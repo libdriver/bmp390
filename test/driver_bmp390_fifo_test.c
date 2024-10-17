@@ -468,7 +468,7 @@ uint8_t bmp390_fifo_test(bmp390_interface_t interface, bmp390_address_t addr_pin
                 
                 return 1;
             }
-            bmp390_interface_delay_ms(1);
+            bmp390_interface_delay_ms(10);
         }
     }
     
@@ -492,7 +492,7 @@ uint8_t bmp390_fifo_test(bmp390_interface_t interface, bmp390_address_t addr_pin
                 
                 return 1;
             }
-            bmp390_interface_delay_ms(1);
+            bmp390_interface_delay_ms(10);
         }
     }
     
