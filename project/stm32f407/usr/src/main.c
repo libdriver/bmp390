@@ -75,7 +75,7 @@ void EXTI0_IRQHandler(void)
 
 /**
  * @brief     gpio exti callback
- * @param[in] pin is the gpio pin
+ * @param[in] pin gpio pin
  * @note      none
  */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -91,7 +91,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 /**
  * @brief     interface interrupt receive callback
- * @param[in] type is the interrupt type
+ * @param[in] type interrupt type
  * @note      none
  */
 void bmp390_interface_interrupt_receive_callback(uint8_t type)
@@ -128,7 +128,7 @@ void bmp390_interface_interrupt_receive_callback(uint8_t type)
 
 /**
  * @brief     interface fifo receive callback
- * @param[in] type is the interrupt type
+ * @param[in] type interrupt type
  * @note      none
  */
 void bmp390_interface_fifo_receive_callback(uint8_t type)
@@ -232,8 +232,8 @@ void bmp390_interface_fifo_receive_callback(uint8_t type)
 
 /**
  * @brief     bmp390 full function
- * @param[in] argc is arg numbers
- * @param[in] **argv is the arg address
+ * @param[in] argc arg numbers
+ * @param[in] **argv arg address
  * @return    status code
  *            - 0 success
  *            - 1 run failed
