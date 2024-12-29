@@ -1185,8 +1185,8 @@ Functions</h2></td></tr>
 <p>basic example init </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>is the chip interface </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the iic device address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>chip interface </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>iic device address </td></tr>
   </table>
   </dd>
 </dl>
@@ -1230,8 +1230,8 @@ Functions</h2></td></tr>
 <p>basic example read </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>points a converted temperature data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_pa</td><td>points a converted pressure data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>pointer a converted temperature data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_pa</td><td>pointer a converted pressure data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1309,9 +1309,9 @@ Functions</h2></td></tr>
 <p>fifo example init </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>is the chip interface </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the iic device address </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*fifo_receive_callback</td><td>points to a fifo receive callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>chip interface </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>iic device address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*fifo_receive_callback</td><td>pointer to a fifo receive callback </td></tr>
   </table>
   </dd>
 </dl>
@@ -1395,10 +1395,10 @@ Functions</h2></td></tr>
 <p>fifo example read </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*buf</td><td>points a data buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buf_len</td><td>is the data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*frame</td><td>points a frame structure </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">*frame_len</td><td>points a frame data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*buf</td><td>pointer a data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf_len</td><td>data buffer length </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*frame</td><td>pointer a frame structure </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">*frame_len</td><td>pointer a frame data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1476,9 +1476,9 @@ Functions</h2></td></tr>
 <p>interrupt example init </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>is the chip interface </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the iic device address </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*interrupt_receive_callback</td><td>points to a interrupt receive callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>chip interface </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>iic device address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*interrupt_receive_callback</td><td>pointer to a interrupt receive callback </td></tr>
   </table>
   </dd>
 </dl>
@@ -1550,8 +1550,8 @@ Functions</h2></td></tr>
 <p>interrupt example read </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>points a converted temperature data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_pa</td><td>points a converted pressure data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>pointer a converted temperature data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_pa</td><td>pointer a converted pressure data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1623,8 +1623,8 @@ Functions</h2></td></tr>
 <p>shot example init </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>is the chip interface </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the iic device address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">interface</td><td>chip interface </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>iic device address </td></tr>
   </table>
   </dd>
 </dl>
@@ -1668,8 +1668,8 @@ Functions</h2></td></tr>
 <p>shot example read </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>points a converted temperature data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_pa</td><td>points a converted pressure data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_c</td><td>pointer a converted temperature data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pressure_pa</td><td>pointer a converted pressure data buffer </td></tr>
   </table>
   </dd>
 </dl>

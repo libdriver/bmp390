@@ -59,9 +59,9 @@ uint8_t bmp390_fifo_test_irq_handler(void);
 
 /**
  * @brief     fifo test
- * @param[in] interface is the chip interface
- * @param[in] addr_pin is the iic device address
- * @param[in] times is the test times
+ * @param[in] interface chip interface
+ * @param[in] addr_pin iic device address
+ * @param[in] times test times
  * @return    status code
  *            - 0 success
  *            - 1 test failed

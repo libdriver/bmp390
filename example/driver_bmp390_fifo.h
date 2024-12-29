@@ -85,9 +85,9 @@ uint8_t bmp390_fifo_irq_handler(void);
 
 /**
  * @brief     fifo example init
- * @param[in] interface is the chip interface
- * @param[in] addr_pin is the iic device address
- * @param[in] *fifo_receive_callback points to a fifo receive callback
+ * @param[in] interface chip interface
+ * @param[in] addr_pin iic device address
+ * @param[in] *fifo_receive_callback pointer to a fifo receive callback
  * @return    status code
  *            - 0 success
  *            - 1 init failed
@@ -107,10 +107,10 @@ uint8_t bmp390_fifo_deinit(void);
 
 /**
  * @brief         fifo example read
- * @param[in]     *buf points a data buffer
- * @param[in]     buf_len is the data buffer
- * @param[out]    *frame points a frame structure
- * @param[in,out] *frame_len points a frame data buffer
+ * @param[in]     *buf pointer a data buffer
+ * @param[in]     buf_len data buffer length
+ * @param[out]    *frame pointer a frame structure
+ * @param[in,out] *frame_len pointer a frame data buffer
  * @return        status code
  *                - 0 success
  *                - 1 read failed

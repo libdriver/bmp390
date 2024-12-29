@@ -210,11 +210,11 @@ Functions</h2></td></tr>
 <p>parse the fifo data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*buf</td><td>is the fifo data </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buf_len</td><td>is the fifo data length </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*frame</td><td>points to a frame buffer </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">*frame_len</td><td>points to a frame length buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*buf</td><td>pointer to fifo data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf_len</td><td>fifo data length </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*frame</td><td>pointer to a frame buffer </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">*frame_len</td><td>pointer to a frame length buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -227,7 +227,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l03728">3728</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l03729">3729</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -250,7 +250,7 @@ Functions</h2></td></tr>
 <p>flush the fifo </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -263,7 +263,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l02642">2642</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l02643">2643</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -296,8 +296,8 @@ Functions</h2></td></tr>
 <p>get the fifo status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -310,7 +310,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00794">794</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00795">795</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -349,9 +349,9 @@ Functions</h2></td></tr>
 <p>get the fifo data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a data buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>is the data buffer length </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>data buffer length </td></tr>
   </table>
   </dd>
 </dl>
@@ -364,7 +364,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00639">639</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00640">640</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -397,8 +397,8 @@ Functions</h2></td></tr>
 <p>get the fifo data source </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*source</td><td>points to fifo data source buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*source</td><td>pointer to fifo data source buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -411,7 +411,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01292">1292</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01293">1293</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -444,8 +444,8 @@ Functions</h2></td></tr>
 <p>get the fifo length </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*length</td><td>points to a fifo length buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*length</td><td>pointer to a fifo length buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -458,7 +458,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00601">601</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00602">602</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -491,8 +491,8 @@ Functions</h2></td></tr>
 <p>get the fifo pressure on status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -505,7 +505,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01040">1040</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01041">1041</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -538,8 +538,8 @@ Functions</h2></td></tr>
 <p>get the fifo sensor time on status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -552,7 +552,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00958">958</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00959">959</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -585,8 +585,8 @@ Functions</h2></td></tr>
 <p>get the fifo stopping on full status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -599,7 +599,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00876">876</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00877">877</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -632,8 +632,8 @@ Functions</h2></td></tr>
 <p>get the fifo subsampling </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*subsample</td><td>points to subsample buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*subsample</td><td>pointer to subsample buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -646,7 +646,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01210">1210</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01211">1211</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -679,8 +679,8 @@ Functions</h2></td></tr>
 <p>get the fifo temperature on status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -693,7 +693,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01122">1122</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01123">1123</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -726,8 +726,8 @@ Functions</h2></td></tr>
 <p>get the fifo watermark </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*watermark</td><td>points to a fifo watermark buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*watermark</td><td>pointer to a fifo watermark buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -740,7 +740,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00712">712</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00713">713</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -779,9 +779,9 @@ Functions</h2></td></tr>
 <p>read the fifo </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*buf</td><td>points to a data buffer </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">*len</td><td>points to a data length buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*buf</td><td>pointer to a data buffer </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">*len</td><td>pointer to a data length buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -794,7 +794,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l03658">3658</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l03659">3659</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -827,8 +827,8 @@ Functions</h2></td></tr>
 <p>enable or disable the fifo </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -841,7 +841,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00749">749</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00750">750</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -874,8 +874,8 @@ Functions</h2></td></tr>
 <p>set the fifo data source </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>is the fifo data source </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>fifo data source </td></tr>
   </table>
   </dd>
 </dl>
@@ -888,7 +888,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01247">1247</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01248">1248</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -921,8 +921,8 @@ Functions</h2></td></tr>
 <p>enable or disable the fifo pressure on </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -935,7 +935,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00995">995</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00996">996</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -968,8 +968,8 @@ Functions</h2></td></tr>
 <p>enable or disable the fifo sensor time on </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -982,7 +982,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00913">913</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00914">914</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -1015,8 +1015,8 @@ Functions</h2></td></tr>
 <p>enable or disable the fifo stopping on full </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1029,7 +1029,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00831">831</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00832">832</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -1062,8 +1062,8 @@ Functions</h2></td></tr>
 <p>set the fifo subsampling </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">subsample</td><td>is the fifo subsample </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">subsample</td><td>fifo subsample </td></tr>
   </table>
   </dd>
 </dl>
@@ -1076,7 +1076,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>subsample &lt;= 7 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01159">1159</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01160">1160</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -1109,8 +1109,8 @@ Functions</h2></td></tr>
 <p>enable or disable the fifo temperature on </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1123,7 +1123,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01077">1077</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l01078">1078</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
@@ -1156,8 +1156,8 @@ Functions</h2></td></tr>
 <p>set the fifo watermark </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a bmp390 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">watermark</td><td>is the fifo watermark </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bmp390 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">watermark</td><td>fifo watermark </td></tr>
   </table>
   </dd>
 </dl>
@@ -1170,7 +1170,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00674">674</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bmp390_8c_source.html#l00675">675</a> of file <a class="el" href="driver__bmp390_8c_source.html">driver_bmp390.c</a>.</p>
 
 </div>
 </div>
