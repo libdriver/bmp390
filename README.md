@@ -10,7 +10,7 @@
 
 The BMP390 is a very small, low-power and low-noise 24-bit absolute barometric pressure sensor. The digital, high-performance sensor is ideally suited for a wide range of altitude tracking applications. This new BMP390 pressure sensor offers outstanding design flexibility, providing a single package solution that customers can easily integrate into a multitude of existing and upcoming devices such as smartphones, GPS modules, wearables, hearables and drones.
 
-LibDriver BMP390 is a full function driver of BMP390 launched by LibDriver.It provides continuous reading of pressure and temperature, single reading of pressure and temperature, interrupt reading, FIFO acquisition and other functions. LibDriver is MISRA compliant.
+LibDriver BMP390 is a full-featured driver of BMP390 launched by LibDriver.It provides continuous reading of pressure and temperature, single reading of pressure and temperature, interrupt reading, FIFO acquisition and other functions. LibDriver is MISRA compliant.
 
 ### Table of Contents
 
