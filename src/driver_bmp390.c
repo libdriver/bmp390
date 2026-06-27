@@ -3255,35 +3255,47 @@ uint8_t bmp390_read_pressure(bmp390_handle_t *handle, uint32_t *raw, float *pa)
             press:
             
             cnt = 5000;                                                                       /* set cnt 5000 */
-            if ((prev & (1 << 5)) != 0)                                                       /* data is ready */
+            while (cnt != 0)
             {
-                int64_t output;
-                
-                res = a_bmp390_iic_spi_read(handle, BMP390_REG_DATA_0, (uint8_t *)buf, 3);    /* read config */
+                res = a_bmp390_iic_spi_read(handle, BMP390_REG_STATUS, 
+                                           (uint8_t *)&prev, 1);                              /* read config */
                 if (res != 0)                                                                 /* check result */
                 {
-                    handle->debug_print("bmp390: get data register failed.\n");               /* get data register failed */
+                    handle->debug_print("bmp390: get status register failed.\n");             /* get status register failed */
                    
                     return 1;                                                                 /* return error */
                 }
-                *raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];               /* get data */
-                output = a_bmp390_compensate_pressure(handle, *raw);                          /* compensate pressure */
-                *pa = (float)((double)output / 100.0);                                        /* get converted pressure */
-                
-                return 0;                                                                     /* success return 0 */
-            }
-            else
-            {
-                if (cnt != 0)                                                                 /* check cnt */
+                if ((prev & (1 << 5)) != 0)                                                   /* data is ready */
                 {
-                    cnt--;                                                                    /* cnt-- */
-                    handle->delay_ms(1);                                                      /* delay 1 ms */
+                    int64_t output;
                     
-                    continue;                                                                 /* continue */
+                    res = a_bmp390_iic_spi_read(handle, BMP390_REG_DATA_0,
+                                               (uint8_t *)buf, 3);                            /* read config */
+                    if (res != 0)                                                             /* check result */
+                    {
+                        handle->debug_print("bmp390: get data register failed.\n");           /* get data register failed */
+                       
+                        return 1;                                                             /* return error */
+                    }
+                    *raw = (uint32_t)buf[2] << 16 | (uint32_t)buf[1] << 8 | buf[0];           /* get data */
+                    output = a_bmp390_compensate_pressure(handle, *raw);                      /* compensate pressure */
+                    *pa = (float)((double)output / 100.0);                                    /* get converted pressure */
+                    
+                    return 0;                                                                 /* success return 0 */
                 }
-                handle->debug_print("bmp390: temperature data is not ready.\n");              /* temperature data is not ready */
-               
-                return 1;                                                                     /* return error */
+                else
+                {
+                    if (cnt != 0)                                                             /* check cnt */
+                    {
+                        cnt--;                                                                /* cnt-- */
+                        handle->delay_ms(1);                                                  /* delay 1 ms */
+                        
+                        continue;                                                             /* continue */
+                    }
+                    handle->debug_print("bmp390: pressure data is not ready.\n");             /* pressure data is not ready */
+                   
+                    return 1;                                                                 /* return error */
+                }
             }
         }
     }
@@ -3464,6 +3476,13 @@ uint8_t bmp390_read_temperature_pressure(bmp390_handle_t *handle, uint32_t *temp
         
         while (1)                                                                             /* loop */
         {
+            res = a_bmp390_iic_spi_read(handle, BMP390_REG_STATUS, (uint8_t *)&prev, 1);      /* read config */
+            if (res != 0)                                                                     /* check result */
+            {
+                handle->debug_print("bmp390: get status register failed.\n");                 /* get status register failed */
+               
+                return 1;                                                                     /* return error */
+            }
             if ((prev & (1 << 5)) != 0)                                                       /* data is ready */
             {
                 int64_t output;
@@ -3490,7 +3509,7 @@ uint8_t bmp390_read_temperature_pressure(bmp390_handle_t *handle, uint32_t *temp
                     
                     continue;                                                                 /* continue */
                 }
-                handle->debug_print("bmp390: temperature data is not ready.\n");              /* temperature data is not ready */
+                handle->debug_print("bmp390: pressure data is not ready.\n");                 /* pressure data is not ready */
                
                 return 1;                                                                     /* return error */
             }
