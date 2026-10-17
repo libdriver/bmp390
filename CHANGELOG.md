@@ -1,3 +1,9 @@
+## 1.0.12 (2026-10-18)
+
+## Bug Fixes
+
+- fix convert errors
+
 ## 1.0.11 (2026-06-27)
 
 ## Bug Fixes

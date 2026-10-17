@@ -317,12 +317,12 @@ static int64_t a_bmp390_compensate_temperature(bmp390_handle_t *handle, uint32_t
     int64_t comp_temp;
 
     /* calculate compensate temperature */
-    partial_data1 = (uint64_t)(data - (256 * (uint64_t)(handle->t1)));
+    partial_data1 = (int64_t)(data - (256 * (uint64_t)(handle->t1)));
     partial_data2 = (uint64_t)(handle->t2 * partial_data1);
     partial_data3 = (uint64_t)(partial_data1 * partial_data1);
     partial_data4 = (int64_t)(((int64_t)partial_data3) * ((int64_t)handle->t3));
     partial_data5 = ((int64_t)(((int64_t)partial_data2) * 262144) + (int64_t)partial_data4);
-    partial_data6 = (int64_t)(((int64_t)partial_data5) / 4294967296U);
+    partial_data6 = (int64_t)(((int64_t)partial_data5) / (int64_t)4294967296);
     handle->t_fine = partial_data6;
     comp_temp = (int64_t)((partial_data6 * 25)  / 16384);
     
@@ -364,7 +364,8 @@ static int64_t a_bmp390_compensate_pressure(bmp390_handle_t *handle, uint32_t da
     partial_data2 = (int64_t)(handle->p10) * (int64_t)(handle->t_fine);
     partial_data3 = partial_data2 + (65536 * (int64_t)(handle->p9));
     partial_data4 = (partial_data3 * data) / 8192;
-    partial_data5 = (partial_data4 * data) / 512;
+    partial_data5 = (int64_t)((data * (partial_data4 / 10)) / 512);
+    partial_data5 = (int64_t)(partial_data5 * 10);
     partial_data6 = (int64_t)((uint64_t)data * (uint64_t)data);
     partial_data2 = ((int64_t)(handle->p11) * (int64_t)(partial_data6)) / 65536;
     partial_data3 = (partial_data2 * data) / 128;
@@ -3818,6 +3819,20 @@ uint8_t bmp390_fifo_parse(bmp390_handle_t *handle, uint8_t *buf, uint16_t buf_le
                 frame[frame_total].type =  BMP390_FRAME_TYPE_SENSORTIME;                                                                  /* set sensor time type */
                 frame[frame_total].raw = (uint32_t)buf[i + 2 + 1] << 16 | (uint32_t)buf[i + 1 + 1] << 8 | buf[i + 0 + 1];                 /* set raw */
                 frame[frame_total].data = 0;                                                                                              /* set data */
+                frame_total++;                                                                                                            /* frame++ */
+                i += 4;                                                                                                                   /* index+4 */
+                
+                break;                                                                                                                    /* break */
+            }
+            case 0x84 :                                                                                                                   /* pressure only frame */
+            {
+                if (frame_total > ((*frame_len) - 1))                                                                                     /* check length */
+                {
+                    return 0;                                                                                                             /* return success */
+                }
+                frame[frame_total].type = BMP390_FRAME_TYPE_PRESSURE;                                                                     /* set pressure type */
+                frame[frame_total].raw = (uint32_t)buf[i + 3] << 16 | (uint32_t)buf[i + 2] << 8 | buf[i + 1];                             /* set raw */
+                frame[frame_total].data = (float)((double)a_bmp390_compensate_pressure(handle, frame[frame_total].raw) / 100.0);          /* set data */
                 frame_total++;                                                                                                            /* frame++ */
                 i += 4;                                                                                                                   /* index+4 */
                 
